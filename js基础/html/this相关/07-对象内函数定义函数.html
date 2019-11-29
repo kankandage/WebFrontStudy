@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>this语义</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <div id="box">div</div>
+        <script>
+            var a = 1;
+            var obj = {
+                a:2,
+                //在哪里定义 指向谁
+                fn1:()=>{
+                    console.log(this.a);
+                },
+                //谁调用，指向谁
+                fu2:function(){
+                    console.log(this.a);
+                }
+            }
+
+            obj.fn1();// 1
+            obj.fn2();// 2
+        </script>
+    </body>
+</html>

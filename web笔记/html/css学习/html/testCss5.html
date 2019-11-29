@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>渐变</title>
+        <meta charset="utf-8"/>
+        <style type="text/css">
+          div{
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+          }
+          #d1{
+              /*参数：方向 颜色1 颜色2*/
+            background-image: linear-gradient(180deg,green 20%,red 60%);
+          }
+          #d2{
+               /*参数：位置 颜色1 颜色2*/
+            border-radius: 100px;
+            background-image: radial-gradient(200px at right bottom,white,#004477);
+
+
+          }
+        </style>
+    </head>
+    <body>
+        <div id="d1">DIV1的内容</div></br>
+        <div id="d2">DIV2的内容</div></br>
+        <div id="d3">DIV3的内容</div>   
+    </body>
+</html>

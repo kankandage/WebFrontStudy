@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>this语义</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <div id="box">div</div>
+        <script>
+
+            //构造函数
+            function Fn(){
+                this.a = 10;
+
+                //return 1;//返回非 null 的对象 ，那么实例化结构就是返回初的对象
+                //return {};//返回对象
+            }
+            //实例化
+            var f = new Fn();
+            console.log(f);
+
+        </script>
+    </body>
+</html>

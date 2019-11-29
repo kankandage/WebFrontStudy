@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>定时器</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        
+        <script>
+            //1.
+            setTimeout(function(num){
+                alert(num)
+            },1000)
+            //2.拼接字符串
+            window.onload = function(){
+                //字符串不能折行
+                document.body.innerHTML = '<div>div</div><span>span</span><p>p</p>55555';
+                //可加\
+                document.body.innerHTML = '<div>div</div>\
+                                            <span>span</span>\
+                                            <p>p</p>\
+                                            55555';
+            }
+            //3.console.log
+            var a = 'hello';
+            //可以输出样式
+            console.log('%'+a,"font-size:400%;background:blue;color:white");
+
+            //4.typeof
+            var arr = [];
+            alert(typeof arr);
+            alert(typeof(arr));
+
+            //5.嵌套for循环
+
+            for(var i=0;i<5;i++){
+                for(var j=0;j<5;j++){
+                    if(i === 3){
+                        //只会跳出到外部循环
+                        break;
+                    }
+                    alert(i);
+                }
+            }
+
+            //6.for(;;)
+            var i = 0;
+            for(;;){
+                alert(i);
+                if(++i>=5){
+                    break
+                }
+            }
+
+            //7.call
+
+            var obj = {
+                aaa:function(){
+                    alert(this);
+                }
+            };
+
+            var arr = [1,2,3];
+            //如果不加参数，直接指向window
+            obj.aaa.call(arr);
+
+            //8.insertBefore
+
+            //9.匿名函数自执行
+            //除了加()，也可以加位运算符
+            (function () {
+                alert(123);
+            })();
+
+            +function () {
+                alert(123);
+            }();
+
+            //10.创建对象
+            function Aaa() {
+                
+            }
+
+            var al = new Aaa();
+            //也可以这样写
+            var al1 = new Aaa;
+            alert(al);
+
+        </script>
+    </body>
+</html>

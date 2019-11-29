@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+</head>
+
+<body>
+    <script>
+        //原型：去改写对象下面公用的方法或者属性，让公用的方法或属性在内存中存在一份(提高性能)
+
+        //原型：css中的class  css中的style
+
+        //原型：prototype:写在构造函数下面
+
+        //问题不好调用
+        // var arr = [1,2,3,4,5];
+
+        // arr.sum = function(){
+        //     var result = 0;
+        //     for(var i = 0;i<this.length;i++){
+        //         result +=this[i];
+        //     }
+
+        //     return result;
+        // }
+
+        // alert(arr.sum());
+
+        var arr = [1,2,3,4,5];
+        Array.prototype.sum = function(){
+            var result = 0;
+            for(var i = 0;i<this.length;i++){
+                result +=this[i];
+            }
+            return result;
+        }
+
+    </script>
+</body>
+
+</html>  

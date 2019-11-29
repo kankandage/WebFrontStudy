@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Object.defineProperty</title>
+        <script src="../../src/vue.js"></script>
+        <style>
+          .red{
+            background:red;
+          }
+
+          #app div{
+            display: none;
+          }
+        </style>
+    </head>
+    <body>
+      <div id="app">
+        <button id="btn"></button>
+        <h2 id="title">这是标题</h2>
+      </div>
+      <!--数据-->
+      <script>
+        var data = {
+          title:"新闻",
+        }
+        //数据劫持，转成·getter setter
+        function observer(obj) {
+          obj.keys(obj).forEach((item) => {
+            defineReactive(obj,item,obj[item])
+          });
+        }
+        function defineReactive(obj,key,value) {
+          Object.defineProperty(obj,key,{
+            get(){
+              return value;
+            },
+            set(newValue){
+              value = newValue;
+              title.innerHTML = data.title;
+            }
+          })
+        }
+        
+       //
+       var title = document.getElementById("title");
+       var btn = document.getElementById("btn");
+       title.innerHTML = data.title;
+
+       btn.onclick = function(){
+         data.title = "数据变了";
+         //手动绑定
+         //title.innerHTML = data.title;
+       }
+       </script>
+    </body>
+</html>

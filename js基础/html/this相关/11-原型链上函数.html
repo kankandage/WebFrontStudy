@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>this语义</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <div id="box">div</div>
+        <script>
+
+            var p ={
+                a:1,
+
+                fn:function(){
+                    console.log(this.a);
+                }
+            }
+            //__proto__   c是p的副本
+            var c = Object.create(p);
+            //console.log(c);
+            console.log(c.__proto__);//1
+
+            console.log(c.a);
+
+            c.fn();
+        </script>
+    </body>
+</html>

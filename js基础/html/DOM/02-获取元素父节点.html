@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>DOM</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <ul id="ul">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+        <script>
+            var ul = document.getElementById("ul");
+            var ails = ul.children;
+
+            console.log(ails[0].innerHTML);
+            console.log(ails[0].parentNode);
+            /*
+                parentNode:查找某个元素的父节点
+            */
+           
+        </script>
+    </body>
+</html>

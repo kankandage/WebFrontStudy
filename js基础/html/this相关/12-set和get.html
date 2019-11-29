@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>this语义</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <div id="box">div</div>
+        <script>
+ 
+            var obj = {
+                n:1,
+                m:2,
+                get sum(){
+                    console.log("正在尝试访问sum...");
+                    return this.n + this.m;
+                },
+
+                set sum(val){
+                    console.log("正在设置sum...");
+                    this.n = val/2;
+                    this.m = val/2;
+                }
+            }
+            
+        </script>
+    </body>
+</html>

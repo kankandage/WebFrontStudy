@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>响应数据变化</title>
+        <script src="../../src/vue.js"></script>
+        <style>
+          .red{
+            background:red;
+          }
+
+          #app div{
+            display: none;
+          }
+        </style>
+    </head>
+    <body>
+      <!--数据和模板--> 
+      <div id = "app">
+        <button @click="test">测试事件</button>
+        
+      </div>
+      <!--数据-->
+      <script>
+
+        /*
+         v-on简写为@
+        */
+
+
+
+        let tabData =[
+          {
+            title:"新闻",
+            list:[
+              {
+                subTItle:"今天很好"
+              },
+              {
+                subTItle:"今天坏"
+              },
+              {
+                subTItle:"今天可以"
+              }, 
+            ]
+          },
+          {
+            title:"娱乐",
+            list:[
+              {
+                subTItle:"结婚"
+              },
+              {
+                subTItle:"出轨"
+              },
+            ]
+          },
+          {
+            title:"体育",
+            list:[
+              {
+                subTItle:"冠军"
+              },
+              {
+                subTItle:"第一"
+              },
+            ]
+          }
+        ]
+        let vm = new Vue({
+          el:"#app",
+          methods:{ //
+            test(){
+              console.log(123);
+            }
+          },
+        })
+       </script>
+    </body>
+</html>

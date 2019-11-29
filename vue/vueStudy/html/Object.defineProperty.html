@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Object.defineProperty</title>
+        <script src="../../src/vue.js"></script>
+        <style>
+          .red{
+            background:red;
+          }
+
+          #app div{
+            display: none;
+          }
+        </style>
+    </head>
+    <body>
+      <div id="app">
+        <button id="btn"></button>
+        <h2 id="title">这是标题</h2>
+      </div>
+      <!--数据-->
+      <script>
+        var data = {
+          title:"新闻",
+        }
+
+        //使用数据的时候，要先对数据进行劫持（代理）
+        //使用 Object.defineProperty 劫持数据，把属性转成访问器形式
+        /*
+          getter
+            获取属性触发
+          setter
+            设置属性触发
+        */
+
+        //Object.defineProperty
+       //定义属性，也可以原有的属性上描述
+
+        //数据描述方式
+        Object.defineProperty(data,"miaov",{
+          value:"ketang",
+          writable:false ,//false 不允许重新改写
+          enumerable:false,//false 不允许枚举
+          writable:false,//设置false 不可删除
+        })
+
+        //
+        Object.defineProperty(data,"miaov",{
+          get(){
+            return "新的值"
+          },
+          set(){
+
+          }
+        })
+
+        console.log(data.title);
+       //
+       var title = document.getElementById("title");
+       var btn = document.getElementById("btn");
+       title.innerHTML = data.title;
+
+       btn.onclick = function(){
+         data.title = "数据变了";
+         //手动绑定
+         //title.innerHTML = data.title;
+       }
+       </script>
+    </body>
+</html>

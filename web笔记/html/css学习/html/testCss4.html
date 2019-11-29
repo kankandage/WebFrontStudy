@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>框模型</title>
+        <meta charset="utf-8"/>
+        <style type="text/css">
+          div{
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin-bottom: 10px;
+          }
+          #d1{
+             background-color:red;
+             background-image: url("../../../res/images/class1/c2.png");
+          }
+          #d2{
+            background-image: url("../../../res/images/class1/c2.png");
+            /*repeat no-repeat repeat-x repeat-y*/
+            background-repeat:repeat;
+            /*设置数值  /contain包含完整图片 /cover*/
+            background-size: 100px;
+
+            
+          }
+          #d3{
+            background-image: url("../../../res/images/class1/c2.png");
+            /*参数 水平 垂直*/
+            background-position: center center;
+          }
+           /*背景图固定*/
+          /*
+          body{
+            background-image: url("../../../res/images/class1/c2.png");
+            背景图固定
+            background-attachment: fixed;
+          }
+          */
+        </style>
+    </head>
+    <body>
+        <div id="d1">DIV1的内容</div>
+        <div id="d2">DIV2的内容</div>
+        <div id="d3">DIV3的内容</div>   
+    </body>
+</html>

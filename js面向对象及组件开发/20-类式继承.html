@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+       
+    </style>
+
+    <script src=""></script>
+</head>
+
+<body>
+    <script>
+        //类式继承 利用构造函数 
+        //类：JS 是没有类的概念的，把构造函数看作是类
+
+        function Aaa(){//父类
+            this.name = [1,2,3];
+        }
+
+        Aaa.prototype.showName = function(){
+            alert(this.name);
+        }
+
+        function Bbb(){ //子类
+            Aaa.call(this);
+        }
+
+        //属性和方法继承的时候要，分开继承
+        //类式继承！！！！！！！！！！  一句话做到继承
+        var F = function(){};
+        F.prototype = Aaa.prototype;
+        Bbb.prototype = new F();
+        Bbb.prototype.constructor = Bbb; //修正指向问题
+
+        var b1 = new Bbb();
+        alert(b1.showName)
+
+        //问题1：
+        alert(b1.constructor); //Aaa
+        
+        //问题2
+
+        b1.name.push(4);
+        var b2 = new Bbb();
+        alert(b1.name) // [1,2,3,4]
+    </script>
+
+</body>
+
+</html>

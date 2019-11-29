@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>DOM</title>
+        <meta charset="utf-8"/>
+        <style>
+            /* div{
+                padding: 100px;
+            } */
+            #div{
+                background: red;
+                width: 200px;
+                height: 200px;
+                border: 10px solid #00bfff;
+                padding: 5px;
+                margin: 10px;
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div">
+            阿大撒大撒大大<br>
+            阿大撒大撒大大<br>
+            阿大撒大撒大大<br>
+            阿大撒大撒大大<br>
+            阿大撒大撒大大<br>
+            阿大撒大撒大大<br>
+            阿大撒大撒大大<br>
+            阿大撒大撒大大<br>
+        </div>
+    
+        <script>
+            /*
+                elem.clientHeight/ elem.clientWidth (获取某个元素的宽高) 注意：不计算边框，加上padding值
+                elem.offsetHeight/elem.offsetWidth (获取某个元素的宽高)  注意：计算边框，加上padding值
+            */
+         
+          var div = document.getElementById("div");
+
+          console.log(div.clientWidth);
+          console.log(div.offsetWidth);
+
+        //-------------------------------------------------------------------------------------
+            /*
+                可视区的尺寸
+                document.documentElement.clientWidth/ document.documentElement.clientHeight (获取可是区宽高) 
+            */
+
+            var div = document.getElementById("div");
+            console.log(document.documentElement.clientWidth);
+            console.log(document.documentElement.clientHeight);
+
+        //----------------------------------------------------------------------------------------
+            /*
+             让一个不确定宽高的元素居中显示
+             元素的left = (可视区的宽 - 元素的宽)/2
+             元素的top =(可视区的高 - 元素的高)/2
+            */
+            var div = document.getElementById("div");
+            var clientW = document.documentElement.clientWidth;
+            var iW = div.offsetWidth;
+
+            var clientH = document.documentElement.clientHeight;
+            var iH = div.offsetHeight;
+
+            div.style.left = (clientW -iW)/2 + 'px';
+            div.style.top = (clientH -iH)/2 + 'px';
+
+        </script>
+    </body>
+</html>

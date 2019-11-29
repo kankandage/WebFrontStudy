@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>this语义</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <div id="box">div</div>
+        <script>
+            var a = 1;
+            var obj = {
+                a:2,
+                fn1:function(){
+                    console.log(this.a);
+                },
+                fn2:()=>{
+                    return ()=>{
+                        console.log(this.a);
+                    }
+                }
+            }
+
+            obj.fn1();//2
+            obj.fn.bind({a:"111"})();//111
+
+            //-----------------------------------------------------
+            var  obj = {
+                a:1
+            };
+
+            var fn = function(){
+                console.log(this.a);
+            }
+
+            obj.fn = fn 
+            obj.fn();//1
+
+            //---------------------------------------------
+
+            var  obj = {
+                a:1
+            };
+
+            var fn1 = ()=>{
+                console.log(this.a);
+            }
+
+            obj.fn1 = fn1;
+            obj.fn1();//undefined
+
+            //-----------------------------
+            
+            var a = 1;
+            var  obj = {
+                a:2,
+                o:{
+                    a:3,
+                    fn:function(){
+                        console.log(this.a);
+                    }
+                }
+            };
+            obj.o.fn();//3
+
+            var temp = obj.o.fn;
+            //在windows里调用的
+            temp();//1
+
+        </script>
+    </body>
+</html>

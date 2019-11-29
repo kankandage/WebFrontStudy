@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+       
+    </style>
+
+    <script src=""></script>
+</head>
+
+<body>
+   
+    <script>
+    //json的参数
+     function show(opt){
+
+     }
+
+
+     show({
+         id:"div1",
+         toDown:function(){},
+         toUp:function(){}
+    });
+
+    //参数的复制
+    var a = {  //配置参数
+        name:"xiao"
+    };
+
+    var b = { //默认参数
+        name:"da"
+    }
+
+    extend(b,a);
+    alert(b.name);
+    extend(CreateStar.prototype,CreatePerson.prototype);
+       function extend(obj1,obj2){
+            for(var attr in obj2){
+                obj1[attr] = obj2[attr]
+            }
+       }
+
+
+    </script>
+
+</body>
+
+</html>

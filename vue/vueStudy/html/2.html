@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>2使用Vue</title>
+        <script src="../../src/vue.js"></script>
+    </head>
+    <body>
+      <!--数据和模板-->
+      <div id = "app">
+        <input type="text" v-on:input="inputHandle"/>
+        <p v-bind:title="message">{{message}}</p>
+        <p v-bind:title="[1,2,3].map(item=>item*2)">{{[1,2,3].map(item=>item*2)}}</p>
+      </div>
+      <!--数据-->
+      <script>
+        /*
+          input(text,checkox,radio)
+          textarea
+          select
+
+          Vue中绑定事件
+          指令directive 一种特殊的自行定义行间属性，以v-开头
+          将数据和DOM做关联，当表达式的值改变时，响应式的作用在视图
+
+          v-bind:属性名="表达式"
+          v-on：事件名 = "表达式"
+
+          数据 ->  页面
+          页面 -> 数据
+        */
+        var message = "hello world";
+
+        var vm =  new Vue({
+                      el:"#app",
+                      data:{
+                          message
+                      },
+                      methods:{ //定义方法  定义方法中的this都指向实例
+                     
+                        inputHandle(ev){
+                            console.log(vm === this);
+                          //DOM里的ev
+                            console.log(ev.target.value);
+                            console.log("触发了input");
+                            this.message = ev.target.value
+                        }
+                      }
+                  })
+
+        
+       </script>
+    </body>
+</html>

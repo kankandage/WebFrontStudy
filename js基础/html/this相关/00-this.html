@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>this语义</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <div id="box"></div>
+        <script>
+            var box = document.getElementById("box");
+            box.onclick = function(){
+                this.style.backgroundColor = "red";
+                //
+                setTimeout(function(){
+                    //
+                    console.log(this);
+                    this.style.backgroundColor = "red";
+                },1000);
+
+                //箭头函数
+                setTimeout(function(){
+                    //
+                    console.log(this);
+                    this.style.backgroundColor = "red";
+                },1000);
+            }
+        </script>
+    </body>
+</html>

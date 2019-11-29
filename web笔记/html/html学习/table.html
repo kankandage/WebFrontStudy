@@ -1,0 +1,56 @@
+<!--声明的html的版本-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>table训练</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <p>创建如下的表格</p>
+        <table border="1px" width="600" height="400" cellspacing="2px" align = "center">
+            <caption>这是表的标题</caption>
+        <!--背景 background="../res/images/11.jpg   行高 cellpadding = "20px" -->
+        <!--载默认情况下背景图会自动平铺重复-->
+            <tr  align="center">
+                <td colspan="2"></td>
+                <td rowspan="2"></td>
+            </tr>
+            <tr>
+                <td rowspan="2"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+            </tr>
+        </table>
+
+
+        <p>创建如下的表格</p>
+        <table border="1px" width="600" height="400" cellspacing="2px" align = "center">
+            <caption>这是表的标题</caption>
+        <!--背景 background="../res/images/11.jpg   行高 cellpadding = "20px" -->
+        <!--载默认情况下背景图会自动平铺重复-->
+            <tr  align="center">
+                <td width="70%">全月应交所得税</td>
+                <td>税率</td>
+                <td>速算扣除数</td>
+            </tr>
+            <tr align="center">
+                    <td>全月应交所得税&lt;1500</td>
+                    <td>3%</td>
+                    <td>0</td>
+            </tr>
+            <tr align="center">
+                    <td>1500=&it;全月应交所得税&it;4500</td>
+                    <td>10%</td>
+                    <td>105</td>
+            </tr>
+            <tr>
+                <td colspan="3">...</td>
+            </tr>
+            <tr>
+                 <td colspan="3">计算公式为：&nbsp; 应用税额 =</td>
+             </tr>
+        </table>
+    </body>
+</html>

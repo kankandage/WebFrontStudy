@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>框模型</title>
+        <meta charset="utf-8"/>
+        <style type="text/css">
+          div{
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            padding: 20px;
+          }
+          #d1{
+              border-color: red;
+          }
+          #d2{
+            border-color: green;
+            margin: 10px;
+          }
+          #d3{
+              /*当上下margin相遇时，较大的值生效*/
+              margin-right: 0;
+              margin-top: 20px;
+          }
+        </style>
+    </head>
+    <body>
+        <div id="d1">DIV1的内容</div>
+        <div id="d2">DIV2的内容</div>
+        <div id="d3">DIV3的内容</div>   
+    </body>
+</html>

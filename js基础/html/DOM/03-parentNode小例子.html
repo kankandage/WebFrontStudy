@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>DOM</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <ul id="ul">
+            <li a href = "javascript:;">1</li>
+            <li a href = "javascript:;">11</li>
+            <li a href = "javascript:;">111</li>
+            <li a href = "javascript:;">1111</li>
+            <li a href = "javascript:;">11111</li>
+            <li a href = "javascript:;">11111</li>
+        </ul>
+        <script>
+            /*
+                parentNode:查找某个元素的父节点
+            */
+            var a = document.getElementsByTagName("a");
+            for(var i=0;i<a.length;i++){
+                a[i].onclick = function(){
+                    this.parentNode.style.display = "none";
+                }
+            }
+            //---------------------------------------------------------
+            /*
+                找兄弟节点
+            */
+            var ul = document.getElementById("ul");
+            var alis = ul.children;
+            //寻找某个元素的下个兄弟节点 nextElementSibling
+            console.log(alis[0].nextElementSibling)
+             //寻找某个元素的上个兄弟节点 previousElementSibling
+             console.log(alis[1].previousElementSibling);
+
+             //--------------------------------------------------------
+             /*
+                找到第一个节点  firstElementChild
+                找到最后一个节点 lastElementChild
+
+                
+            */
+           console.log(ul.firstElementChild);
+           console.log(ul.lastElementChild);
+        </script>
+    </body>
+</html>

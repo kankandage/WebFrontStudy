@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>DOM</title>
+        <meta charset="utf-8"/>
+        <style>
+            /* div{
+                padding: 100px;
+            } */
+            #div1{
+                background: red;
+                width: 100px;
+                height: 100px;
+                position: relative;
+            }
+            #div2{
+                background:blue;
+                position: relative;
+                width: 60px;
+                height: 60px;
+            }
+            #div3{
+                background:yellow;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                left:10px
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div1">
+            <img src = "01-nodeType例子.html" id="src">
+        </div>
+    
+        <script>
+          //获取元素行间的属性
+          //elem.getAttribute('key');
+          var div = document.getElementById("div1");
+          var img = document.getElementById("src");
+          //设置元素的行间属性 
+          //elem.setAttribute('key','value');
+          div.setAttribute('index','3');
+
+          //删除元素的行间属性 
+          //elem.removeAttribute('key');
+          div.removeAttribute('index');
+
+          /*
+            特点：可以操作行间自定义属性
+                 可以获取src、href 等相对地址
+          */
+
+          console.log(img.getAttribute(src));
+          alert(div.getAttribute('id'));
+          alert(div.id);
+        </script>
+    </body>
+</html>

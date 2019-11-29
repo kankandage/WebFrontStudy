@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>修改个人信息练习</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <h1>修改个人信息</h1>
+        <!--method="get/post" action表单提交的路径-->
+        <form name="个人信息" method="POST" action="">
+           <table border="1px" boedercolor="black"  cellspacing="0" width="500px">
+               <caption>信息</caption>
+               <tr >
+                   <td width="20%" height="50px">姓名:</td>
+                   <td>
+                        <input type="text" name="name" />
+                   </td>
+               </tr>
+               <tr>
+                    <td height="50px">性别:</td>
+                    <td>
+                        <!-- 对于单选框来说需要 type类型 name为组名（一组单选框name必须相同） value选项值-->
+                        <input type="radio" name="sex" value="man" checked/>男
+                        <input type="radio" name="sex" value="woman"/>女
+                    </td>
+                </tr>
+                <tr>
+                    <td height="50px">爱好:</td>
+                    <td>
+                        <!-- 对于多选框来说需要 type类型 name为组名（一组单选框name必须相同-->
+                        <input type="checkbox" name="music" />音乐
+                        <input type="checkbox" name="art" />美术
+                        <input type="checkbox" name="sport" />运动
+                        <input type="checkbox" name="game" />游戏
+                        <input type="checkbox" name="travel"/>旅行
+                    </td>
+                </tr>
+                <tr>
+                   <td height="50px">学历:</td>
+                   <td>
+                       <select name="xueli">
+                           <!--select的属性
+                            name:size菜单行数，默认为1行
+                            mutiple 允许多行
+                        -->
+                           <option value="other">其他</option>
+                           <option value="zhuan">专科</option>
+                           <option value="ben">本科</option>
+                           <option value="shuo">硕士及以上</option>
+                       </select>
+                   </td>
+               </tr>
+               <tr>
+                    <td height="50px">意向工作城市:</td>
+                    <td >
+                        <select name="city" size="5">
+                            <option disabled>选择意向城市</option>
+                            <option>北京</option>
+                            <option>上海</option>
+                            <option>广州</option>
+                            <option>深圳</option>
+                            <option>天津</option>
+                            <option>西安</option>
+                            <option>武汉</option>
+                            <option>郑州</option>
+                            <option>其他</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="50px">个人描述:</td>
+                    <td>
+                        <textarea name="description"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="50px"></td>
+                    <td>
+                        <!--label标签-->
+                        <input type="checkbox" name="secret" id="secret"/><label for="secret">
+                            不用公开我的信息
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="50px"></td>
+                    <td><input type="submit" name="保存"/>
+                        <input type="reset" value="重填"/>
+                        <input type="button"/>
+                        <button>按钮</button>
+                    </td>
+                </tr>
+           </table>
+        </form>
+
+        <!--其他标记-->
+        <h1>浮动框架</h1>
+        <iframe src="../html/table.html" width="800px" height="400px" frameborder="0" name="window"></iframe>
+        <details>
+            <summary>发票与细节</summary>
+            <div>
+                单位：<input/><br/>
+                发票类型：
+                <select>
+                    <option>生活用品</option>
+                    <option>数码产品</option>
+                    <option>办公用品</option>
+                    <option>明细</option>
+                </select>
+            </div>
+        </details>
+
+        <h1>磁盘使用量</h1>
+        <div>
+            磁盘一:<meter min="0" max="100" value="64" title="64%"></meter>%<br/>
+            磁盘一:<meter min="0" max="100" value="35" title="35%"></meter>%
+        </div>
+
+        <h1>时间元素</h1>
+        <time>14点16分</time>
+    </body>
+</html>

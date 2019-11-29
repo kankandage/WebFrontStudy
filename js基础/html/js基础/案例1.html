@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>案例1</title>
+        <meta charset="utf-8"/>
+        <style>
+            button{
+                width: 100px;
+                height: 35px;
+                text-align: center;
+                font:18px/35px "微软雅黑";
+                margin:0;
+                padding: 0;
+            }
+
+            #box{
+                width: 200px;
+                height: 200px;
+                background: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <button id="btn">按钮</button>
+            <div class="box"></div>
+        </div>
+        <script>
+            //一.获取元素 
+            //1.在文档中通过id获取元素
+            /*
+                document - 文档
+                    getElementById
+                document.getElementById
+                特点：
+                1.通过id进行获取
+                2.如果获取不存在的元素，得到结果null !!!
+                3.getElementById 只用docment下有 ，id是当前页面中唯一的
+            */
+            document.getElementById('btn');
+            //2.通过元素选择器
+            /*
+                document.querySelector(选择器-css中使用的选择器)
+                document.querySelector
+                特点：
+                    1.通过选择器进行选取
+                    2.遇到第一个符合条件的元素，就返回第一个元素
+                    3.如果不存在，得到结果会是null
+
+            */
+            document.querySelector('#btn');
+            document.querySelector(".box");
+            //打印
+            console.log( document.getElementById('btn'));
+            console.log( document.querySelector(".box"));
+
+            //二.绑定事件
+
+            document.getElementById("btn").onclick = function(){
+                //修改样式
+                document.getElementById("btn").style.background = "red";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>DOM</title>
+        <meta charset="utf-8"/>
+        <style>
+            /* div{
+                padding: 100px;
+            } */
+            #div{
+                background: red;
+                width: 200px;
+                height: 200px;
+                border: 10px solid #00bfff;
+                padding: 5px;
+                margin: 10px;
+                position: absolute;
+            }
+
+            #div1{
+                width: 100px;
+                height: 100px;
+                background: red;
+            }
+
+            #div2{
+                width: 100px;
+                height: 100px;
+                background: blue;
+            }
+        </style>
+    </head>
+    <body>
+       <table border="" id="box">
+           <thead id="thead">
+               <tr>
+                   <th>头1</th>
+                   <th>头2</th>
+                   <th>头3</th>
+                   <th>头4</th>
+                   <th>头5</th>
+               </tr>
+           </thead>
+           <tfoot>
+            <tr>
+                <td>tong1</td>
+                <td>tong2</td>
+                <td>tong3</td>
+                <td>tong4</td>
+                <td>tong5</td>
+            </tr>
+           </tfoot>
+           <tbody>
+               <tr>
+                   <td>1</td>
+                   <td>2</td>
+                   <td>3</td>
+                   <td>4</td>
+                   <td>5</td>
+               </tr>
+           </tbody>
+       </table>
+        <script>
+         //var tHead = document.getElementById('thead');
+         /*
+            table.tHead ------> 获取tHead
+
+            table.rows ------> 获取一行的tr 获取的是行数（一组）
+
+            table.tFoot ------> 获取表格底部
+
+            table.tBodies ------> 获取表格主体
+                注意：取到的是一个集合
+
+            rows[i].cells[j] ------>获取某一个单元格
+         */
+         var box = document.getElementById("box");
+         box.tHead.style.borderColor = 'red';
+
+         var tr = box.getElementsByTagName('tr');
+         box.rows[1].style.backgroundColor = "greenyellow";
+        </script>
+    </body>
+</html>

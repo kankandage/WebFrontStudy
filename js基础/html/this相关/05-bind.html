@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>this语义</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <div id="box">div</div>
+        <script>
+
+        //     function fn(){
+        //         console.log(this.a);
+        //     }
+            
+        //    var fn1= fn.bind({a:2});
+        //    var fn2= fn.bind({a:3});
+        //    var fn3= fn.bind({a:4});
+           //console.log(fn1);
+        //    fn1();
+        //    fn2();
+        //    fn3();
+
+
+           //对于fn1来说bind只能绑定一次
+           //var fn4 = fn1.bind({a:100});
+           //fn4();
+
+//-------------------------------------------------------------------
+            //如果传入的不是对象调用相对的构造函数，进行隐式转换
+            function fn(){
+                console.log(this);
+            }
+            var fn1 = fn.bind(1);
+            fn1();
+
+        </script>
+    </body>
+</html>

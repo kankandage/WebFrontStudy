@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+</head>
+
+<body>
+    <script>
+        var  obj = new Object();  //创建一个空对象
+        obj.name = "小明";  //属性
+        obj.showName = function(){  //方法
+            //this
+            alert(this.name);
+        }
+        obj.shouName();
+
+    </script>
+</body>
+
+</html>  

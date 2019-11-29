@@ -1,0 +1,169 @@
+css zen garden
+1.css 设计页面样式  便于维护 
+    用css定义页面样式：
+        1.更加多样性
+        2.属性更统一
+2.css 层叠样式表
+    1.实现了将内容与表现分离
+    2.提高代码的可重用性和可维护性
+与html之间的关系
+    1.实现内容和表现的分离
+    2.如果HTML所有持有的属性，则使用HTML属性
+
+3.定义CSS样式的方式
+    1.内联样式：定义在单个的HTML元素中:
+        <p style="color：red;"></p>
+    2.内部样式：将CSS样式定义在网页head元素中
+            <style type="text/css">
+                h1{
+                    color：red;
+                }
+             </style>
+    3.外部样式：将CSS样式定义在一个独立的css文件里，然后链接到HTML文档中
+        链接<link rel="stylesheet" type="text/css" href=""
+4.CSS样式表特征
+    1.继承性
+        大多数css的样式规则可以被继承
+    2.层叠性
+
+    3.优先级
+        样式优先级：低到高
+            1.浏览器缺省设置
+            2.外部样式表或者内部样式表
+            3.内联样式
+
+5.CSS基础选择器
+    1.通用选择器，显示为一个星号(*)
+        写在*里的样式会给页面中所有元素都用一遍
+        慎用。尽量少用，否则会降低css样式的效率
+    2.元素选择器，html文档就是选择器
+        比如p、h1等 不加尖括号
+    3.类选择器
+    语法：
+        1.声明样式
+        .className{
+            color：red
+        };
+        2.调用
+        在html标签中添加class属性
+    4.id选择器
+        1.声明样式
+        #idName{}
+        2.调用
+        id属性
+        仅用id属性
+    元素选择器 < 类选择器 < id选择器
+    5.群组选择器
+    
+    6.后代选择器(包含选择器)
+    写法:父元素 子元素 :指父元素的所有某个后代
+    div span{
+
+    }
+     子代选择器 ：某父元素中的直接子元素
+    div>span{
+
+    }
+
+    7.伪类选择器
+        链接伪类
+        link 适用于尚未访问的链接
+        visited 适用访问过的链接
+        动态伪类
+        hover 鼠标悬停时
+        active HTML元素激活时
+        foucs HTML聚焦时(一般适用于表单元素)
+
+6.选择器优先级
+1.元素选择器 0，0，0，0，1
+2.类选择器  0，0，0，1，0
+3.伪类选择器 0，0，1，0，0
+4.ID选择器 0，1，0，0，0
+5.内联样式 1，0，0，0，0
+加权计算 谁大谁高
+
+7.css的效率
+1.效率 ID选择器 > 类选择器 > 元素选择器
+2.后代选择器最好不使用
+
+8.样式规则
+    1.尺寸与边框
+    css单位
+        1.百分比%
+        2.英寸 in 
+        3.厘米 cm 
+        4.毫米 mm
+        5.磅 pt 1磅等于1/72英寸
+        6.像素 px
+        7.1em等于当前的字体尺寸 em
+
+    2.颜色单位：屏幕上显示的内容颜色模式都是RGB
+        1.rgb(x,x,x)
+        2.rgb(X%,X%,X%)
+        3.#rrggbb 十六进制数
+        4.#rgb：简写的十六进制数
+        5.单词 ex:red
+    3.尺寸：用于设置元素的宽度和高度
+        单位：一般为像素或百分比
+        属性
+           1. width height
+           2. min-width min-height
+                max-width max-height
+           3. overflow
+              overflow-X
+              overflow-y
+                visible溢出可见 hidden隐藏 scroll滚动条 auto自动适应
+    
+    4.边框
+        1.简写单位 border
+        参数
+        width
+        style ：solid/dashed/dotted
+        border-left/right/top/boyttom
+        color
+
+        2.border-radius 边框导角
+         /*顺时针取参数*/
+        border-radius: 0px 0px;
+
+        3.边框阴影 box-shadow向方框添加一个或多个阴影
+        参数1：
+        必须
+            h-shadow 
+            v-shadow
+        可选
+            blur 模糊距离
+            spread 扩展
+            color
+            inset
+        
+        4.*图片边框 border-image（不兼容IE8）
+           参数
+           border-image-scr来源
+           border-image-width 宽度
+           border-image-repeat 平铺 repeat/round/stretch
+        5.轮廓
+            outline 
+    5.框模型
+        框模型定义了元素框处理元素内容，内边距、边框和外边距的方式
+        1.width < padding < margin
+        2.margin 可以为正值、负值、0、auto。
+        margin只能决定元素上下左右的间距，并不能改变元素的布局方式
+    6.外边距 margin
+      内边距 padding 将会撑大元素 
+    
+    7.背景 
+        background-color用于为元素设置背景色
+        background-image
+        background-repeat
+        background-size
+        background-position
+        background-attachment: fixed;
+        background-clip
+    8.渐变 两种或者多种颜色之间的平滑过渡
+        background-image 
+        linear-gradient:线性渐变 参数：渐变方向 颜色1，2，3
+        radial-gradient：径向渐变
+        -repeating-liear-gradient 重复性渐变
+        -repeating-radial-gradient 重复径向渐变
+

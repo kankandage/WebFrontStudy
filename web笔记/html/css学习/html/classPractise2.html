@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>评论模块</title>
+        <meta charset="utf-8"/>
+        <style type="text/css">
+            #ping{
+                width: 838px;
+                margin-top: 10px;
+            }
+
+            #ping_kuang{
+                width: 838px;
+                min-height:50px;
+                padding: 10px 15px 5px;
+                border: 1px solid #d0e4c2;
+            }
+
+            #ping_page a{
+                /*width height 行内元素宽和高不生效*/
+                /*行内元素只有左右margin生效*/
+                border: 1px solid #cccccc;
+                padding:3px 10px;
+                margin: 2px;
+                border-radius: 5px;
+            }
+            #ping_page{
+                margin-top:10px;
+            }
+            #ping_page a:hover{
+                background: #005aa0;
+                color:#ffffff;
+            }
+            #ping_page .current:hover{
+                background: transparent;
+                color:#000000;/*临时的文字色*/
+            }
+            #ping_page .current{
+                border:none;
+                padding:4px 11px;
+            }
+            #ping_star{
+                border-bottom:1px solid #d0e4c2;
+            }
+            #stars{
+                width: 75px;
+                height: 14px;
+                background: blue no-repeat -109px -239px;
+                margin: 0 0 5px 5px;
+            }
+            #ping_text b{
+                padding:7px 5px;
+                margin-right: 5px;
+                background: #fdedd2;
+            }
+            #ping_btn input{
+                width :80px;
+                padding: 10px;
+                border:1px solid #d5d5d5;
+                border-radius: 3px;
+                color: #333;
+                margin-right: 10px;
+                background-image: linear-gradient(to bottom,#fafafa,#ccc);
+            }
+            #ping_btn{
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="ping">
+        </div>
+        <div id="ping_kuang">
+            <div id="ping_star">
+                <div id="stars"></div>
+            </div>
+            <div id="ping_text">
+                <p>标&nbsp;&nbsp;&nbsp;&nbsp;签: 
+                    <b>比洗衣粉好</b>
+                    <b>去污能力强</b>
+                </p>
+                <p>心&nbsp;&nbsp;&nbsp;&nbsp;得:
+                    买了几次，海可以
+                </p>
+                <p>
+                    购买日期：2019-11-11
+                </p>
+            </div>
+            <div id="ping_btn">
+                <input type="button" value="有用(3)"/>
+                <input type="button" value="回复(3)"/>
+            </div>
+        </div>
+        <div id="ping_page">
+            <a class="current">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+        </div>
+    </body>
+</html>

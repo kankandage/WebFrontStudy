@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>选择器练习</title>
+        <meta charset="utf-8"/>
+        <style type="text/css">
+           div{
+               width: 200px;
+               height: 200px;
+               /**/
+           }
+           #d1{
+               border:1px solid black;
+              /* box-shadow: 5px 5px 5px #FEDD45;*/
+              outline: 2px solid;
+              color:red;
+           }
+           input{
+               outline: 0px;
+           }
+           #d2{
+                border:1px solid black;
+               /*参数 h-shadow  v-shadow blur spread color*/
+               box-shadow: 0px 0px 5px 2px red;
+           }
+           #d3{
+               border:1px solid black;
+               box-shadow: -5px -5px 5px #000 inset;
+           }
+           #d4{
+               border:10px solid black;
+               /*参数 路径 切片大小 平铺方式*/
+               border-image: url(../../../res/images/class1/c1.png) 26 repeat;
+           }
+           #d5{
+                border:10px solid black;
+                border-image: url(../../../res/images/class1/c1.png) 26 stretch;
+           }
+           #d6{
+                border:10px solid black;
+                border-image: url(../../../res/images/class1/c1.png) 26 round;
+           }
+        </style>
+    </head>
+    <body>
+        <input></br>
+        <div id="d1"></div></br>
+        <div id="d2"></div></br>
+        <div id="d3"></div></br>
+
+        <div id="d4"></div></br>
+        <div id="d5"></div></br>
+        <div id="d6"></div>
+    
+    </body>
+</html>

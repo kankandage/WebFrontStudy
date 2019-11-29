@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>this语义</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <div id="box">div</div>
+        <script>
+
+            function fn(m,n){
+                console.log(this.a,m,n);
+            }
+            //函数.call会直接调用该函数
+                //并且call的第0个参数就是 函数执行时候的this,后面的参数是函数执行的时候的参数
+            fn.call({a:1},2,3);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,112 @@
+1.复习ES6
+    1.声明变量 
+        var
+        let
+            1.不允许重复声明
+            2.不存在变量提升
+            3.块级作用域 暂存死区
+        const
+            1.特性同let
+            2.声明一个只读的常量，一旦声明，常量就不能改变
+    2.解构赋值：ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构
+        数组的结构赋值：
+    3.模板字符串
+    4.箭头函数：使用箭头函数 
+        1.改变this指向，箭头函数中this绑定的是所定义的作用域
+        ()=>{}
+
+    5.函数的扩展
+        1.
+        2.argument为类数组，
+            function fn(){
+                //会报错
+                console.log(argument.push);
+            }
+        ES6中引入reset 
+        function fn(...arr){
+                //不报错
+                console.log(arr.push)
+        }
+    6.对象的简单表示法
+
+    7.Object.assgin()
+        Object.assgin(目标对象，源对象属性)
+        用户合并对象，将源对象属性复制到目标对象
+    8.扩展运算符 spread
+       var arr = [1,2,3];
+       //将arr放到 arr2中
+       var arr2 = [...arr];
+    9.数组方法
+      map()映射
+        var arr = [1,2,3]
+        //将数组每一项都乘2，放在新数组中
+        //方法1
+        arr.forEach(function(item,index){
+            console.log(item,index);
+        })
+        //方法2
+        var newArr = arr.map(function(item,index){
+            console.log(item,index);
+        })
+    filter()
+    find()
+    findIndex()
+
+2.Vue介绍
+ 1.构建用户界面的渐进式界面  易用 灵活 高效
+ 2.框架与库
+    库，是一封装好的特定方式的集合，提供该开发者使用，库没有控制权，控制权在使用者手中； 代表：jQurey、underscore、util
+    框架，是一套架构，会基于自身特点给用户提供一套相当完整的解决方案，而且控制权在框架本身，使用者要找框架所规定的某种规范进行开发 代表：backbone,angular,Vue
+ 3.响应的数据绑定 
+    当数据发生改变时，视图自动更新
+4. 指令directive 
+    一种特殊的自行定义行间属性，以v-开头将数据和DOM做关联，当表达式的值改变时，响应式的作用在视图
+    1.v-bind:表达式
+    2.v-on ：表达式  绑定方法
+    3.双向数据绑定
+        Vue将数据对象和DOM进行绑定，彼此之间相互影响，
+            数据的改变会引起DOM的改变 DOM的改变也会引起数据变化
+      v-model： 1.负责监听用户输入事件以更新数据  （绑在创建双向数据绑定的元素上）
+                2.会根据控件类型自动选取正确的方法来更新元素交互的值
+    4.
+5.MVVM模式
+ M:model 数据
+ V:view 视图
+ V-M:view-model
+
+6.响应的数据变化
+    如果没有定义某个属性，那么就不能检测属性变化
+
+7.条件判断
+
+8.计算属性： 
+
+9.响应式原理
+    将一个普通的JavaScript对象传给Vue实例的data选项，Vue将遍历此对象所有属性，并使用Object.defineProperty将这些属性全部转为getter/setter
+    Vue内部会对数据进行劫持操作，进行追踪依赖，在属性被访问和修改时通知变化
+
+10.声明式渲染理解
+    1.DOM状态只是数据状态的一个映射
+    2.所有的逻辑尽可能在状态的层面去进行
+    3.当状态改变了，view会被框架自动更新到合理的状态
+11.v-text 
+   v-text更新文本，可以代替{{}}
+12.v-html
+   更新元素的innerHTML
+   //HTML必须是可靠的
+13 v-clock 
+    隐藏未编译的Mustache标签直到实例准备完毕
+14. v-once
+    只渲染一遍 用于静态内容
+
+15.事件修饰符：
+    方法只有存粹的数据逻辑，而不是去处理DOM事件细节
+    语法：@事件名.修饰符.修饰符 = "事件处理函数"
+        .stop .prevent .capture .self .once
+        按键修饰符 .enter .tab .delete .esc .space .up .down .left .right    
+
+
+
+
+
+         
