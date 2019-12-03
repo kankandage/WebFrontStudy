@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0}
+        .login{background: white;border: 1px #000 solid;position:absolute;left: 0px;top: 0px;z-index: 1;}
+        .title{height: 30px;background: gray;color: white;}
+        .title .close{float: right;}
+        #mark{width: 500px;height: 500px;background:black ;filter: alpha(opacity=50);opacity:0.5;position:absolute;left:0;top:0;z-index: 1;}
+    </style>
+
+<script>
+
+//自定义事件：主要是跟函数有关，就是让函数能够具备事件的某些特性
+    //  function show(){
+    //      alert(1);
+    //  }
+
+    //  show(); 
+
+    window.addEventListener("show",function(){
+        alert(1);
+    },false);
+    window.addEventListener("show",function(){
+        alert(2);
+    },false);
+    window.addEventListener("show",function(){
+        alert(3);
+    },false)
+
+    show();//主动触发自定义事件
+    
+    </script>
+</head>
+
+<body>
+    <input type = "button" value="1">
+    <input type = "button" value="2">
+    <input type = "button" value="3">
+
+   
+</body>
+
+</html>
