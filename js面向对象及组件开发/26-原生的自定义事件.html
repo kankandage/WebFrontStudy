@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+      
+    </style>
+
+<script>
+    window.onload= function(){
+        var oDiv = document.getElementById("div1");
+        var oSpan = document.getElementById("span1");
+
+        bindEvent(oDiv,"click",function(){
+            alert(1);
+        });
+
+        fireEvent(oSpan,"show");
+    }
+
+
+function bindEvent(obj,events,fn){
+
+    //obj 楼层
+    //events：书架
+    //fn:一本书
+
+    obj.listeners = obj.lisnteners ||{};
+    obj.listeners[events] = obj.listeners[events]||{};
+    obj.listeners[events].push(fn);
+
+    if(obj.nodeType){
+        if(obj.addEventLisntener){
+        obj.addEventLisntener(event,fn,false);
+    }else{
+        obj.attachEvent("on"+events,fn);
+    } 
+    }
+
+}
+
+//主动触发自定义事件
+function fireEvent(obj,event){
+    if(obj.listeners){
+        for(var i=0;i<obj.listeners[events].length;i++){
+        obj.listeners[events][i]();
+
+        }
+    }
+    
+}
+    
+</script>
+</head>
+
+<body>
+    <div id = "div1">div</div>
+    <span id="span1">span</span>
+    
+   
+</body>
+
+</html>
