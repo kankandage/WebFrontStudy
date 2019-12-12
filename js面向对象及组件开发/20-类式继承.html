@@ -30,6 +30,9 @@
 
         //属性和方法继承的时候要，分开继承
         //类式继承！！！！！！！！！！  一句话做到继承
+        Bbb.prototype = new Aaa();
+
+        //解决
         var F = function(){};
         F.prototype = Aaa.prototype;
         Bbb.prototype = new F();

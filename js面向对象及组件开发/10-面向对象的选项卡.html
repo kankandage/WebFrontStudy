@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta name="viewport">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="">
@@ -15,6 +15,8 @@
     </style>
 
     <script>
+
+        //传统过程式写法
         // window.onload = function(){
         //     var oParent = document.getElementById("div1");
         //     var aInput = oParent.getElementsByTagName('input');
@@ -35,8 +37,7 @@
         // }
 
 
-
-        //先变型
+        //写出传统方法，然后将传统方式变形
         //尽量不要嵌套函数
         //可以有全局变量
         //把onload中不是赋值的语句单独放到函数中
@@ -51,7 +52,15 @@
             oParent = document.getElementById("div1");
             aInput = oParent.getElementsByTagName('input');
             aDiv = oParent.getElementsByTagName("div");
+            //初始化
             init();
+        }
+
+        function init(){
+            for(var i = 0;i < aInput.length;i++){
+                aInput[i].index = i;
+                aInput[i].onclick = change;
+            }
         }
 
         function change(){
@@ -61,15 +70,7 @@
             }
             this.className = "active";
             aDiv[this.index].style.display = "block";
-        }
-
-        function init(){
-            for(var i = 0;i < aInput.length;i++){
-                aInput[i].index = i;
-                aInput[i].onclick = change;
-            }
-        }
-        
+        }       
     </script>
 </head>
 
