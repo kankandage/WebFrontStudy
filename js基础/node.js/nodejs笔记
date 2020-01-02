@@ -1,0 +1,21 @@
+1.nodejs
+    1 是基于V8引擎的Javascript运行环境
+    2 使用一个事件驱动、非阻塞式I/O的模型
+
+2.nodejs安装环境 Chrome vsCode 
+
+
+
+异步编程  callback
+    1.回调函数格式规范
+        error-first callback
+        Node-style callback
+    2.第一个参数是error，后面的参数才是结果
+
+
+    promise
+    1.当前事件循环得不到结果，但未来事件循环会给到你结果
+    2.一个状态机
+        pedding
+        fulfilled/resolved
+        rejected
