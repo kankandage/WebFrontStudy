@@ -6,7 +6,6 @@ interview(function (err) {
     if(err){
         return console.log("cry at 1st round");
     }   
-
     count++;
 })
 
@@ -25,4 +24,5 @@ function interview(callback) {
         }
       
     }, 500);
+    
 }
