@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Document</title>
+    <style>
+      .div1{width: 200px;height: 200px; background:red;padding:10px;border: 10px #000 solid;margin: 10px;}
+    </style>
+    <script type="text/javascript" src="./text/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+   <div>
+      <div class='box1 box2'>div</div>
+
+      <div class='div1'>div</div>
+   </div>
+    <script>
+      $(function(){
+        //addClass 添加样式 不能添加重复remove
+        $('div').addClass('box3 box4');
+
+        //removeClass 添加样式 不能添加重复
+        $('div').removeClass('box1');
+
+
+        //width() innerWidth() outerWidth()
+        $('div').width();//width
+        $('div').innerwidth(); //width+padding
+        $('div').outerwidth();//width + pading +border
+        $('div').outerwidth(true);//width + pading + border + margin
+
+      })
+    </script>
+</body>
+
+</html>  

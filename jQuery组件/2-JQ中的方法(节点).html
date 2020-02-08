@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Document</title>
+    <style>
+      .div1{width: 200px;height: 200px; background:red;padding:10px;border: 10px #000 solid;margin: 10px;}
+    </style>
+    <script type="text/javascript" src="./text/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+   <div>
+      <div>div</div>
+      <span>span</span>
+   </div>
+    <script>
+      $(function(){     
+        //insertBefore() 节点操作  剪切
+        $('span').insertBefore($('div')) //把span添加到div前
+
+        //inderAfter()
+        $('div').insertAfter($('span'));
+
+        //appendTo :appendChild  把div节点添加到span节点中
+        $('div').appendTo($('span'));
+
+        //
+        $('div').prependTo($('span'));
+
+        //区别 ：后续操作变了 操作主体变了
+        //before()  span前div  
+        $('span').before($('div')) 
+
+        //同理 after() append() prepend()
+
+
+        //remove 删除节点
+
+        //on()  off() 事件
+        //点击事件
+        $("div").on('click',function(){
+          alert(123);
+          //取消事件
+          $('div').off();
+        })
+
+
+
+      })
+    </script>
+</body>
+
+</html>  
