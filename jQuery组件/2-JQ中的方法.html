@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Document</title>
+    <script type="text/javascript" src="./text/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div title = '123'>div</div>
+    <span class= "box">span</span>
+
+    <div class="box">div1</div>
+    <div>div2</div>
+
+    <div class="box">div3<span>span</span></div>
+    <div>div4</div>
+
+
+    <div>div5</div>
+    <span>span22</span>
+    <p>p</p>
+
+
+    <div>
+      <h3>h3</h3>
+      <h2>h3</h2>
+      <h3>h3</h3>
+      <h3>h3</h3>
+      <h2>h3</h2>
+      <h3>h3</h3>
+    </div>
+
+    <div>
+      <h3>h3</h3>
+      <h2>h3</h2>
+      <h3 id='h'>h3</h3>
+      <h3>h3</h3>
+      <h2>h3</h2>
+      <h3>h3</h3>
+    </div>
+
+
+    <script>
+      //attr修改属性
+      $("div").attr("title","456");
+
+      //fiiter 一组进行筛选   not :filter的反义词
+      $(function(){
+        $("div").css("background","red");
+
+        //$("div").filter("class").css("background","red");
+        //$("div").not("class").css("background","red");
+      });
+
+      //has:包含
+      //$("div").has("span").css("background","red");
+
+      //next() pre() 下一个 上一个 兄弟节点
+      $(function(){
+        $('div5').next(),css('background',"red"); //span22
+
+      });
+
+
+      //find() 查找
+      $(function(){
+        $('div').find('h2').css('background','red');
+      })
+
+      //eq()  一组下标
+      $(function(){
+        $('div').find('h2').eq(1).css('background','red');
+      })
+
+      //index() 一组元素的索引
+      $(function(){
+        alert($('#h'),index());//当前元素在所有兄弟节点中的位置   alert(2)
+      })
+
+
+    </script>
+</body>
+
+</html>  

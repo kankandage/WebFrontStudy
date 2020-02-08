@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Document</title>
+    <script type="text/javascript" src="./text/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li class="box"></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        //2.独有的表达式选择
+        $('li').css("background","red");
+        $('li:first').css("background","yellow");
+        $('li:last').css("background","blue");
+        $('li:eq(2)').css("background","black");
+        //奇偶
+        $('li:even').css("background","black");
+        $('li:odd').css("background","white");
+
+        //3.多种筛选方法
+        $('li').filter('.box').css("background","white");
+
+        
+
+    </script>
+</body>
+
+</html>  

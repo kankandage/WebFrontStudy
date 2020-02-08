@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Document</title>
+    <script type="text/javascript" src="./text/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div id="div1" class="box">div</div>
+    <script>
+        //原生
+        // document.getElementById("div1");
+        // document.getElementsByTagName("div");
+        //getByClass自己写
+        // getByClass(document,"box");
+
+        //JQ
+        //1.模拟CSS选择元素
+        //$('#div1').css("background","red");
+        //$("div").css("background","red");;
+        $('.box').css("background","red");;
+
+    </script>
+</body>
+
+</html>  

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Document</title>
+    <script type="text/javascript" src="./text/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div id="div1" class="box">div</div>
+    <script>
+        
+
+        //JQ
+        $(function(){
+            //
+            var oDiv = $('#div1');
+            oDiv.html('hello');
+            oDiv.css("background","red");
+            oDiv.click(function(){
+                alert(123);
+            })
+
+            //链式
+            $("#DIV1").html('hello').css("background",'red').alert(123)
+        });
+
+       
+        
+
+    </script>
+</body>
+
+</html>  

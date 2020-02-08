@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Document</title>
+    <script type="text/javascript" src="./text/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div id="div1" class="box">div</div>
+    <script>
+        // 1.   //方法函数化
+        // //原生
+        // window.onload = function(){};
+        // //JQ
+        // $(function(){});
+        // function $(){}
+
+        //原生
+        window.onload = function(){
+            var oDiv = document.getElementById("div1");
+
+            odiv.onclick = function(){
+                alert(this.innerHTML);
+            }
+        }
+
+        //JQ
+        //传参方式
+        $(function(){
+            $('#div').click(function(){
+                alert($(this).html());
+            });
+        });
+
+        //  2.JQ与JS的关系
+        //  可以共存，但不能混用
+        //ex
+        $(function(){
+            $('#div').click(function(){
+
+                //Js的写法
+                // alert(this.innerHTML)
+                //JQ的写法
+                //alert($(this).html());
+                //错误的 混用了
+                // alert(this.html());
+                // alert($(this).innerHTML)
+
+            });
+        });
+        
+
+    </script>
+</body>
+
+</html>  
