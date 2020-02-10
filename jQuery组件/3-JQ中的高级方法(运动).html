@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Document</title>
+    <style>
+      #div1{width: 200px;height: 200px;background: red;}
+      /* div2{width: 200px;height: 200px;background:yellow;} */ 
+    </style>
+    <script type="text/javascript" src="./text/jquery-3.4.1.min.js"></script>
+</head>
+
+<body >
+    <div>div</div>
+    <span>span</span>
+
+    <ul>
+      <li>1111</li>
+      <li>2222</li>
+      <li>3333</li>
+      <li>4444</li>
+      <li>5555</li>
+      <li>6666</li>
+      <li>7777</li>
+    </ul>
+    
+
+    <script>
+      $(function(){
+
+        //animate 第一个参数：{} 运动的值和属性  第二个参数：时间（运动快慢） 默认：400 第三个参数：运动形式 只有两种（默认：swing(慢快慢) linear(匀速)）  第二个参数：回调
+        $('#div').click(function(){
+          $(this).animate({width:300,height:300},4000,'swing',function(){
+            alert(123);
+          })
+        });
+
+        //stop 停止运动 默认只会阻止当前运动
+
+        //finish 停止到所有指定的目标点
+
+        //delay 延迟
+
+        //delegate() 事件委托
+        $('ul').delegate('li','click',function(){
+          this.style.background = 'red'
+        })
+
+        //undelegate() 阻止事件委托
+
+
+        //trigger() 主动触发
+        $('#div1').on('click',function () {
+                alert(123);
+            })
+
+            $('#div1').trigger();
+
+        //ev.data 
+        $('#div1').on('click',{name:'hello'},function (ev) {
+
+          alert(ev.data.name);
+          alert(ev.target);
+          alert(ev.type);      
+          })
+        
+      })
+     
+    </script>
+</body>
+
+</html>  

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Document</title>
+    <style>
+      /* div1{width: 200px;height: 200px;background: red;}
+      div2{width: 200px;height: 200px;background:yellow;} */
+    </style>
+    <script type="text/javascript" src="./text/jquery-3.4.1.min.js"></script>
+</head>
+
+<body >
+    <div id="div1">div</div>
+    
+  
+    <script>
+      $(function(){
+
+        //不能混用
+        document.getElementById('div1').innerHTML;
+
+        $('#div1').innerHTML
+
+        //get():就是把JQ转成原生JS
+        //1
+        $('#div1').get(0).innerHTML //可以混用了
+        //2.length
+        for(var i=0;i<$('li').length;i++){
+        
+        }
+
+        //outerWidth() 能针对隐藏元素(原生不包含)和参数true
+
+
+        //text() 获取一组的文本内容 不包含标签
+
+        //remove() 删除节点（包含节点上的操作）  detach()删除节点（保留节点上的操作行为）
+
+
+        //$(function(){})  不等于 window.onload
+        //加载时机不相同 $()//等DOM加载完就可以执行，性能要好
+        //window.onload 完全加载
+
+      })
+     
+    </script>
+</body>
+
+</html>  

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Document</title>
+    <style>
+      
+    </style>
+    <script type="text/javascript" src="./text/jquery-3.4.1.min.js"></script>
+</head>
+
+<body > 
+    <script>
+      //$.extend ：扩展工具方法下的插件形式 $.xxx() $.yyy()
+
+      //$.fn.extend:扩展到JQ对象下的插件形式 $().xxx() $().yyy()
+       
+       $.extend({
+         leftTrim:function(str){
+            return str.replace(/^\s+/,'');
+         }
+       })
+    </script>
+</body>
+
+</html>  

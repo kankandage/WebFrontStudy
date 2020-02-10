@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Document</title>
+    <style>
+      /* div1{width: 200px;height: 200px;background: red;}
+      div2{width: 200px;height: 200px;background:yellow;} */
+    </style>
+    <script type="text/javascript" src="./text/jquery-3.4.1.min.js"></script>
+</head>
+
+<body >
+    <div>div</div>
+    <span>span</span>
+    
+    <span>span</span>
+    <span>span</span>
+    <span>span</span>
+
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <form>
+      <input type='text' name='a' value="1">
+      <input type='text' name='b' value="2">
+      <input type='text' name='c' value="3">
+    </form>
+    </form>
+    
+    </form>
+
+  
+    <script>
+      // $().css() $().html ：只能给JQ对象用
+      // $.xxx()  不仅可以给JQ用,也给原生JS用
+     
+     
+      // 1.$.type() 判断类型
+
+      //2.$.trim() 去掉前后空格
+
+      //3.$.inArray 类似于 indexOf
+
+      //4.$.proxy 改变this指向
+      $(function () {
+        function show() {
+          alert(this); //window
+        }
+
+        //show()
+        $.proxy(show,document)(); //document
+        
+      })
+     
+    </script>
+</body>
+
+</html>  

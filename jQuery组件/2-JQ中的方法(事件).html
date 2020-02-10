@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Document</title>
+    <style>
+      *{margin: 0;padding: 0;}
+      #div1{width: 200px;height: 200px;background: red;overflow: hidden;margin: 20px;position:absolute}
+      #div2{width: 100px;height: 100px;background: yellow;overflow: hidden;margin: 30px;}
+    </style>
+    <script type="text/javascript" src="./text/jquery-3.4.1.min.js"></script>
+</head>
+
+<body >
+   <div>div</div>
+
+   <div id="div1">1111<div id="div2">2222</div></div>
+
+   <input type="button" value="123"/>
+
+   <ul>
+     <li></li>
+     <li></li>
+     <li></li>
+     <li></li>
+   </ul>
+  
+    <script>
+      $(function(){
+        //事件操作
+        $('div').click(function(ev){
+          //ev：event对象
+
+          //ev.pageX（相当于文档）:clienX (相对可视区)
+
+          //ev.which:keyCode()
+
+          //ev.preventDefault();阻止默认事件
+
+          //ev.stopPropagation() //阻止冒泡操作
+
+          //return falsr //阻止默认事件+阻止冒泡操作
+        })
+
+        $('dov').one('click',function(){//只执行事件一次
+          alert(123);
+        })
+
+        //位置
+        //$("#div2").offset().left;//获取到屏幕的左距离
+
+        //$("#div2").position().top;//到有定位的父级left值，把当前元素转化成类似的值
+
+        //offsetParent()
+        // parent():获取父级
+        // offsetParent();获取有定位的父级
+        
+        //$("#div2").parent().css("background","blue");
+
+
+        //取值赋值 val
+
+        $("input").val()
+
+        //size()
+
+        $('li').size(); //像length
+
+        //each
+        $('li').each(function(i,elem){  //一参：下标 二参：每个元素
+          $(elem).html(i);
+        })
+      })
+     
+    </script>
+</body>
+
+</html>  

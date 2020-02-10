@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Document</title>
+    <style>
+      /* div1{width: 200px;height: 200px;background: red;}
+      div2{width: 200px;height: 200px;background:yellow;} */
+    </style>
+    <script type="text/javascript" src="./text/jquery-3.4.1.min.js"></script>
+</head>
+
+<body >
+    <div>div</div>
+    
+    <script>
+      //jQuery = $
+      //noConfilct() 防止$ 冲突
+      var miaov = $.noConfilct();  
+      miaov('body').css('background','red');
+
+      // parseJOSN 严格模式的json解析
+     
+      //makeArray 类数组转成真正数组
+      window.onload = function () {
+        var aDir = document.getElementsByTagName('div')  //类数组
+        $.makeArray(aDiv).push();
+      }
+
+      //$.ajax();
+      $.ajax({
+        url:aaaa,
+        data:'name=hello',
+        type:'POST',
+        success:function(data){
+          alert(data);
+        },
+        error:function(){
+          alert(2);
+        },
+      })
+
+      //抽象出来的方法 
+      //get() post()  getJSON()
+      //$.get()  //////====  $().get
+
+      
+     
+    </script>
+</body>
+
+</html>  

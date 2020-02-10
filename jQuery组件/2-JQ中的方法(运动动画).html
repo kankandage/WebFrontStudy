@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Document</title>
+    <style>
+      div1{width: 200px;height: 200px;background: red;}
+      div2{width: 200px;height: 200px;background:yellow;}
+    </style>
+    <script type="text/javascript" src="./text/jquery-3.4.1.min.js"></script>
+</head>
+
+<body >
+    <div id="div1"></div>
+    <div id="div2"></div>
+  
+    <script>
+      $(function(){
+        //hover 鼠标的移入 移开
+        $('#div1').hover(function(){
+          $(this).css('background','blue');
+        },function(){
+          $(this).css('background','red');
+        })
+
+
+        //hide 隐藏 show 显示
+        $('#div1').hover(function(){
+          $('#div2').hide(3000);
+        },function(){
+          $('#div2').show(3000);
+        })
+
+        //fadeOut() 淡出 fadeIn() 淡入
+
+        //slideUp()  slideDown()
+
+        //fadeTo 淡入淡出透明
+      })
+     
+    </script>
+</body>
+
+</html>  
