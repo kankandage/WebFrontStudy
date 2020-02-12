@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Document</title>
+    <script type="text/javascript" src="vQ.js"></script>
+</head>
+
+<body>
+    <div id="div1">aaa</div>
+    <script>
+        //jQ中的所有的事件操作都是绑定形式，不会覆盖
+        $(function(){
+            alert(123);
+        });
+
+        $(function(){
+            alert(456);
+        });
+
+    </script>
+</body>
+
+</html>  
