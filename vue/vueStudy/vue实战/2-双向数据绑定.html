@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>使用Vue</title>
+        <script src="../../src/vue.js"></script>
+    </head>
+    <body>
+      <!--模板--> 
+      <div id = "demo">
+        <input type='text' v-model="msg"/>  
+        <p>{{msg}}</p>
+      </div>
+      
+      <script>
+        //数据
+        var data = {
+          msg:'hello,Vue!'
+        };
+           //Vm实例
+        var vm = new Vue({
+          el:"#demo", //元素 挂载元素
+          data:data,
+        })
+       </script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+1. vue渐进式框架 构建用户界面 view 
+    只关心视图层
+    1. 声明式渲染  2.组件系统 3.客户端路由 4.大规模状态管理 5.
+2.核心点：1.响应的数据绑定
+         2.利用Object.defineProperty 中的setter/getter代理数据，监控对数据的操作
+
+
+3.可组合的视图组件 
+
+4.虚拟DOM
+  js快 DOM操作慢
+  
+  虚拟DOM
+    模板 ---- render Function ----虚拟DOM tree
+
+5.MVVM     M：model  V：view  VM View-Model 视图模型
+
+6.vm 实例
+  每一个应用都是Vue 这个构造函数
+
+7.声明式渲染
+
+
+8.指令 一种特殊的自定义间属性 职责是当其表达式值改变相应变化 以V-为开头
+
+
+9.html 模板

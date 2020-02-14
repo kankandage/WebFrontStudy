@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>使用Vue</title>
+        <script src="../../src/vue.js"></script>
+    </head>
+    <body>
+      <!--模板--> 
+      <div id = "demo">
+        <div v-html="html">{{msg}}</div>
+        <span>kankan</span>
+      </div>
+      
+      <script>
+        
+        //模板种类
+        //1.html模板  
+        //2.字符串模板 template 选项对象的属性
+        //3.模板-render函数 创建自定模板
+
+        var obj = {
+          //
+          html:"<div>hello<div>",
+          adc:'111'
+        };
+         
+         var str = "<div>{{adc}}<div>"
+
+        var vm = new Vue({
+          el:"#demo", //元素 挂载元素  element
+          data:obj,  //数据
+          template:str,
+        })
+       </script>
+    </body>
+</html>
