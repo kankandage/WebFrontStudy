@@ -15,6 +15,8 @@ new Vue({
 	data:{
 		list:list,
 		todo:"",
+		edtorTodos:'',//记录正在编辑的任务
+		beforeTitle:'',//记录正编辑数据的title
 		
 	},
 	methods:{
@@ -50,6 +52,44 @@ new Vue({
 		deleteTodo(todo){//删除任务
 			var index = this.list.indexOf(todo);
 			this.list.splice(index,1);
-		}
-	}
+		},
+
+		//编辑任务
+		edtorTodo(todo){
+			//编辑任务的时候，记录下编辑任务title，方面取消的时候的使用
+			this.beforeTitle = todo.title;
+			this.edtorTodos = todo;
+		},
+
+		edtorTodoed(todo){//编辑任务成功
+			this.edtorTodo = '';
+		},
+
+		cancelTodo(todo){//取消编辑
+			//
+			todo.title = this.beforeTitle;
+			this.beforeTitle = '';
+			this.edtorTodos = '';
+		},
+	},
+	//计算属性
+	computer:{
+		noCheckedLength:function(){
+			return this.list.filter(function(item){
+				return !item.isChecked;
+			}).length
+		},
+	},
+	//自定义函数
+	directive:{
+		"foucs":{
+			update(el,binding){
+				//el 绑定的元素
+				//binding 
+				if(binding.value){
+					el.focus();//？？？？
+				};
+			},
+		},
+	},
 });

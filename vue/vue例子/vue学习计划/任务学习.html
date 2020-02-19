@@ -21,8 +21,12 @@
             v-model="todo"
             v-on:keyup.enter="addTodo(123,$event)"
         />
-        <ul class="task-count"  v-show="!list.length">
-            <li>个任务未完成</li>
+        <ul class="task-count"  v-show="!list.length">n
+            <li>
+                <!-- {{list}}中可以写一些逻辑 但if for 不可以写 不推荐 -->
+                {{
+                    noCheckedLength
+                }}个任务未完成</li>
             <li class="action">
                 <a class="active" href="#">所有任务</a>
                 <a href="#">未完成的任务</a>
@@ -35,13 +39,20 @@
             <span class="no-task-tip" v-show="!list.length">还没有添加任何任务</span>
             <ul class="todo-list">
                 <!--v-for指令 根据一组数据的选项列表进行渲染 语法 value,key in items -->
-                <li class="todo" :class="{completed:item.isChecked}" v-for="item in list" >
+                <li class="todo" :class="{completed:item.isChecked,editing:item === edtorTodos}" v-for="item in list" >
                     <div class="view">
                         <input class="toggle" type="checkbox" v-model="item.isChecked" />
-                        <label>{{item.title}}</label>
+                        <label @dblclick='edtorTodo(item)'>{{item.title}}</label>
                         <button class="destroy" @click="deleteTodo(item)"></button>
                     </div>
-                    <input class='edit' type='text'/>
+                    <input class='edit' 
+                            type='text'
+                            v-model='item.title' 
+                            v-foucs='edtorTodos === item'
+                            @blur='edtorTodoed(item)'
+                            @keyup.13 = 'edtorTodoed(item)'
+                            @keyup.esc = 'cancelTodo(item)'
+                    />
                 </li>
             </ul>
         </div>
