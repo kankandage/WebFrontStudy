@@ -126,7 +126,7 @@ var vm = new Vue({
 				}
 			}
 			//找到过滤数据，就返回过滤后的数据 没有就返回所有的数据
-			return filter[this.visibility](list)?ilter[this.visibility](list):list;
+			return filter[this.visibility](list)? filter[this.visibility](list):list;
 		},
 	},
 	//自定义函数

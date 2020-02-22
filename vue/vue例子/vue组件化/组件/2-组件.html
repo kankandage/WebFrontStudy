@@ -25,7 +25,7 @@
 				}*/
 			//注册组件
 			Vue.component("custom-select",{
-				//data要写成函数模式
+				//组件中的data要写成函数模式，每个组件有独立的数据，相互之间不会影响
 				data:function(){
 					return {
 						selectShow:false
