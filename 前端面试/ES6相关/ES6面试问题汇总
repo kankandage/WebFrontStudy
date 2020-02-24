@@ -50,3 +50,9 @@
     filter()
     find()
     findIndex()
+
+1.ES5与ES6的区别
+    1.ECMAScript的第五版 2009 现在浏览器中完全支持
+    2.ECMAScript的第六版  2015 大部分浏览器支持
+
+2.箭头函数有字符串插值

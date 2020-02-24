@@ -76,7 +76,7 @@ const result = async function(){
     var content = await new Promise((resolve,reject)=>{
         setTimeout(()=>{
             resolve();
-        },500)
+        },500);
     })
 
     console.log(content);
@@ -86,6 +86,7 @@ const result = async function(){
 setTimeout(()=>{
     console.log(result);
 },800)
+
 
 //Promise{<resolve>:4}
 //awiat 关键字可以"暂停" async function 的执行
