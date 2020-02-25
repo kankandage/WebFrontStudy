@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>2使用Vue</title>
+        <script src="../../src/vue.js"></script>
+    </head>
+    <body>
+      <!--数据和模板-->
+      <div id = "app">
+        <!--v-model绑定在要创建数据绑定的元素-->
+        <input type="text" v-model="message"/>
+        <input type="checkbox" v-model="checked"/>
+        <p>{{message}}</p>
+      </div>
+      <!--数据-->
+      <script>
+        /*
+         双向页面绑定
+         v-model 
+          在表单上创建双向数据绑定
+
+        */
+        var message = "hello world";
+
+        var vm =  new Vue({
+                      el:"#app",
+                      data:{
+                          message,
+                          checked:false
+                      },
+                  })
+
+        
+       </script>
+    </body>
+</html>

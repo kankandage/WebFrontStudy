@@ -114,3 +114,9 @@ console.log(add.apply(null,[1,2]))//3
 
 
 //6.数组的常用用法
+
+
+
+
+
+//

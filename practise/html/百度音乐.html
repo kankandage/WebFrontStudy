@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>响应数据变化</title>
+        <script src="../../src/vue.js"></script>
+        <style>
+         
+        </style>
+    </head>
+    <body>
+      <!--数据和模板--> 
+      <div id = "app">
+        <input type ="text" v-model="message" />
+        <p>{{message}}</p>
+        <p>{{message.split('').reverse().join('')}}</p>
+        <p>{{newList}}</p>
+
+        <p>{{reverseMessage}}</p>
+      </div>
+      <!--数据-->
+      <script>
+
+        let vm = new Vue({
+          el:"#app",
+          data:{
+          },
+        })
+       </script>
+    </body>
+</html>
