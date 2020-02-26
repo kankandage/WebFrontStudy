@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>简易留言板</title>
+        <script src="../src/vue.js"></script>
+    </head>
+    <body>
+      <!--模板--> 
+      <div id = "app">
+        <input type='text' v-model='val'/>
+        <button @click="arrayPush">发送</button>
+        <ul>
+          <li v-for="item of dataArray">{{item.title}}</li>
+        </ul>
+      </div>
+      
+      <script>
+        /*
+          简易留言板：
+            1.加载以前的留言
+            2.输入留言后，按下发送添加新的留言，并显示出来
+        */
+        
+        var dataArray = [  
+        ];
+           //Vm实例
+        var vm = new Vue({
+          el:"#app", 
+          data:{
+            dataArray,
+            val:""
+          },
+          methods:{
+            arrayPush(){
+              this.dataArray.push({
+                id:Date.now(),
+                title:this.val
+              }),
+              this.val = '';
+            }
+          }
+        })
+
+        setTimeout(function(){
+          vm.dataArray = [
+            {
+              id:"1",
+              title:"任务1"
+            },
+            {
+              id:"2",
+              title:"任务2"
+            },
+            {
+              id:"3",
+              title:"任务3"
+            },
+          ]
+        },200)
+       </script>
+    </body>
+</html>

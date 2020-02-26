@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>好友列表</title>
+        <script src="../src/vue.js"></script>
+    </head>
+    <body>
+      <!--模板--> 
+      <div id = "app">
+        <div v-for="item,index of frinds" @click="showAndHode(index)">{{item.title}}
+          <h2>
+            <ul>
+              <li v-for="option of item.list" v-show="item.active">{{option}}</li>
+            </ul>
+          </h2>
+        </div>
+      </div>
+      
+      <script type="text/javascript">
+        var data = [
+          {
+            title:"哥哥",
+            active:true,
+            list:["大哥","二哥","三哥"],
+          },
+          {
+            title:"姐姐",
+            active:true,
+            list:["大姐","二姐","三姐"],
+          },
+          {
+            title:"弟弟",
+            active:true,
+            list:["大弟","二弟","三弟"],
+          },
+          {
+            title:"妹妹",
+            active:true,
+            list:["大妹","二妹","三妹"],
+          }
+        ];
+
+        var vm = new Vue({
+          el:"#app",
+          data:{
+            frinds:data,
+          },
+          methods:{
+              showAndHode(index){
+                if(this.frinds[index].active){
+                  this.frinds[index].active = false;
+                }else{
+                  this.frinds[index].active = true;
+                }
+              },
+          }
+        });
+        
+       </script>
+    </body>
+</html>

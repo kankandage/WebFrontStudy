@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>使用Vue</title>
+        <style>
+          .red{background: red;}
+        </style>
+        <script src="../src/vue.js"></script>
+    </head>
+    <body>
+      <!--模板--> 
+      <div id = "app">
+        <input 
+          type="button"
+          v-for="item,i of tabData"
+          :value="item.title"
+          :class="{red:i===index}"
+          @click="handTab(i)"
+        />
+        <div 
+          v-for="item,j of tabData" 
+          :style="{display:index===j?'block':'none'}">
+          <P v-for="option of item.list ">{{option.subTItle}}</P>
+        </div>
+      </div>
+      
+      <script>
+        
+        let tabData =[
+          {
+            title:"新闻",
+            list:[
+              {
+                subTItle:"今天很好"
+              },
+              {
+                subTItle:"今天坏"
+              },
+              {
+                subTItle:"今天可以"
+              }, 
+            ]
+          },
+          {
+            title:"娱乐",
+            list:[
+              {
+                subTItle:"结婚"
+              },
+              {
+                subTItle:"出轨"
+              },
+            ]
+          },
+          {
+            title:"体育",
+            list:[
+              {
+                subTItle:"冠军"
+              },
+              {
+                subTItle:"第一"
+              },
+            ]
+          }
+        ]
+         
+        var vm = new Vue({
+          el:"#app", //元素 挂载元素  element
+          data:{
+            tabData,
+            index:0,
+          },
+          methods:{
+            handTab(i){
+              this.index = i;
+            },
+          }
+        })
+       </script>
+    </body>
+</html>
