@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>vue的几种基本命令</title>
+        <style>
+          .bg{background: red;}
+        </style>
+        <script src="../src/vue.js"></script>
+    </head>
+    <body>
+      <div id='app'>
+        <!-- v-bind -->
+        <!-- 绑定属性 -->
+        <p :class="{bg:isActive}">{{msg}}</p>
+        <!-- <img :src="srcImg"> -->
+
+        <!-- v-model -->
+        <!-- 双向数据绑定 -->
+        <p></p>
+        <input v-model="msg"/>
+        <P>{{msg}}</P>
+
+        <!-- v-on -->
+        <!-- 监听事件 -->
+        <button  v-on:click="count +=1">加1</button>
+        <P>按钮按下了{{count}}次</P>
+        <button @click="alert1">打印1</button>
+
+        <!-- v-show -->
+        <h1 v-show="vIf">v-show</h1>
+        <!-- v-if -->
+        <h1 v-if="vIf">v-if出现</h1>
+        <h1 v-else>v-else隐藏</h1>
+
+        <!-- v-for-->
+        <ul>
+          <li v-for="item of dataArray">{{item}}</li>
+        </ul>
+
+      </div>
+      
+      <script>
+        /*
+        1.v-bind 用来绑定数据和属性以及表达式，可以简写成：
+        2.v-model 双向数据绑定 使用在表单中
+        3.v-on 监听DOM事件,触发运行时JS代码
+        4.v-show 用来隐藏元素 不管条件真假，第一次渲染的时候都会编译下来，之后切换就是隐藏起来
+        5.v-if 用来隐藏元素 如果为假，不渲染。一般配合v-else 使用
+          性能方面 v-if 更消耗性能 要加dom的删除和添加 v-show 只操作css
+        6.v-for 基于一个数组来渲染一个列表
+        */
+
+
+        //数据
+        var data = {
+          msg:'kankandage',
+          isActive:true,
+          srcImg:"../img/11.jpg",
+          count:0,
+          vIf:false,
+          dataArray:[1,2,3,4,5,6,7,8,9,0],
+        };
+           //Vm实例
+        var vm = new Vue({
+          el:"#app",
+          data:data,
+          methods:{
+            alert1(){
+              alert(1);
+            },
+          }
+        })
+       </script>
+    </body>
+</html>

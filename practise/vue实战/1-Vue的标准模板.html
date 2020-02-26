@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vue的标准模板</title>
+        <script src="../src/vue.js"></script>
+    </head>
+    <body>
+      <div id='app'>
+       <p>{{msg}}</p>
+      </div>
+      
+      <script>
+        /*
+          1.{{模板}}
+            <div id="ID"><div>
+          2.数据
+            var vue-data = {
+              msg:"内容"
+            }
+          3.装载
+            var vm = new Vue({
+              el:"#ID"
+              data:vue-data;
+            });
+        */
+        var data = {
+          msg:"侃侃大哥",
+        };
+
+        var vm = new Vue({
+          el:'#app',
+          data:data,
+        });
+       </script>
+    </body>
+</html>
