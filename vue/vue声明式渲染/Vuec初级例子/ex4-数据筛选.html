@@ -2,33 +2,31 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>响应数据变化</title>
-        <script src="../../src/vue.js"></script>
+        <title>使用Vue</title>
         <style>
-          .red{
-            background:red;
-          }
-
-          #app div{
-            display: none;
-          }
+          .red{background: red;}
         </style>
+        <script src="../../src/vue.js"></script>
     </head>
     <body>
-      <!--数据和模板--> 
+      <!--模板--> 
       <div id = "app">
-        <button @click="test">测试事件</button>
-        
+        <input 
+          type="button"
+          v-for="item,i of tabData"
+          :value="item.title"
+          :class="{red:i===index}"
+          @click="handTab(i)"
+        />
+        <div 
+          v-for="item,j of tabData" 
+          :style="{display:index===j?'block':'none'}">
+          <P v-for="option of item.list ">{{option.subTItle}}</P>
+        </div>
       </div>
-      <!--数据-->
+      
       <script>
-
-        /*
-         v-on简写为@
-        */
-
-
-
+        
         let tabData =[
           {
             title:"新闻",
@@ -67,13 +65,18 @@
             ]
           }
         ]
-        let vm = new Vue({
-          el:"#app",
-          methods:{ //
-            test(){
-              console.log(123);
-            }
+         
+        var vm = new Vue({
+          el:"#app", //元素 挂载元素  element
+          data:{
+            tabData,
+            index:0,
           },
+          methods:{
+            handTab(i){
+              this.index = i;
+            },
+          }
         })
        </script>
     </body>
