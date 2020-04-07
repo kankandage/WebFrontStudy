@@ -113,10 +113,10 @@ console.log(add.call(null,1,2));//3
 console.log(add.apply(null,[1,2]))//3
 
 
-//6.数组的常用用法
+//7.forEach的用法
 
 
 
 
 
-//
+//8.循环队列
