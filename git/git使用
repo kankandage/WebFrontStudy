@@ -1,0 +1,10 @@
+1. git add 添加
+2. git commit -m "XXX" 提交
+3. git pull 拉下同步
+4. git push 提交
+5. git reflog 打印id
+6. git reset commit_id  撤销提交
+7. git stash 贮藏
+8. git stash pop 释放贮藏
+9. rebase 与  merge 变基方式的不同 
+10 git checkout 解决冲突
