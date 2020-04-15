@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>数据类型·</title>
+        <meta charset="utf-8"/>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        
+        <script>
+
+        //基本数据类型
+            // Number
+            // sring
+            // Null
+            // boolean
+            // undefined
+            // symbel
+
+        //复杂数据类型
+                //object
+
+                //数组 
+                //var a = [1,2,3];
+
+                //存储数据的格式Json/对象格式
+                // // var a = {
+                //     name:"kankan",
+                //     age:18
+                // }
+
+        //类型检测
+            //1.typeof() 帮助判断类型
+            
+            //2.fn
+            var fn = function(){
+
+            }
+
+            console.log(typeof fn) // fn
+
+            //typeof 判断类型
+            console.log(typeof 2);                  //number
+            console.log(typeof true);               //boolean
+            console.log(typeof 'str');              //string
+            console.log(typeof []);                 //obejct
+            console.log(typeof function(){});       //function
+            console.log(typeof {});                 //object
+            console.log(typeof undefined);          //undefined
+            console.log(typeof null);               //object   不过精准
+            //其他（数字Number，布尔值Boolean，字符串String，函数Function，对象Object，Undefined）这一些数据类型在typeof 下都被精准的解释，
+            //只有数组和null的数据类型不够精准。
+            //那么如何才能获取到 数组 和 null 的精准数据类型。这就用到下面这种方法
+
+
+            //instanceof 关键字
+            console.log(2 instanceof Number);                 //false
+            console.log(true instanceof Boolean);             //false
+            console.log('str' instanceof String);             //false
+            console.log([] instanceof Array);                 //true
+            console.log(function(){} instanceof Function);    //true
+            console.log({} instanceof Object);                 //true
+
+            //以上结果显示，直接的字面量值判断数据类型，只有引用数据类型（Array，Function，Object）被精准判断，
+            //其他（数值Number，布尔值Boolean，字符串String）字面值不能被instanceof精准判断
+            //instanceof 运算符用来测试一个对象在其原型链中是否存在一个构造函数的 prototype 属性。
+            //其意思就是判断对象是否是某一数据类型（如Array）的实例，请重点关注一下是判断一个对象是否是数据类型的实例
+
+            //constructor
+
+            console.log((2).constructor === Number);                //true
+            console.log((true).constructor === Boolean);            //true
+            console.log(('str').constructor === String);            //ture
+            console.log(([]).constructor === Array);                //true
+            console.log((function() {}).constructor === Function);  //true
+            console.log(({}).constructor === Object);               //true
+
+            //问题
+            function Fn(){}
+            Fn.prototype = new Array();
+            var f = new Fn();
+            console.log(f.constructor === Fn)
+            Console.log(f.constructor === Array)
+
+            //4.Object.prototype.toStirng.call()
+            //使用Object对象的原型方法
+            var a = Object.prototype.toString;
+ 
+            console.log(a.call(2));         //[object Number]
+            console.log(a.call(true));      //[object Boolean]
+            console.log(a.call('str'));     //[object String]
+            console.log(a.call([]));        //[object Array]
+            console.log(a.call(function(){}));//[object Function]
+            console.log(a.call({}));            //[object object]
+            console.log(a.call(undefined));     //[object Undefined]
+            console.log(a.call(null));          //[object Null]
+            //
+            //判断 Json 方法不行
+        </script>
+    </body>
+</html>

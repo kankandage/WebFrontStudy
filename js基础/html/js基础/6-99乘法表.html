@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>99乘法表</title>
+        <meta charset="utf-8"/>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <section id=box>
+            <div></div>
+        </section>
+        <script>
+            //乘法表
+            var box = document.getElementById('box');
+            var str = '';
+            for(var i=1;i<=9;i++){
+                for(var j=1;j<=i;j++){
+                    str += '<div>'+ j+'*'+ i +'<div>'
+                }
+
+                str +='<br/>'
+            }
+            //添加标签
+            box.innerHTML = str;
+        </script>
+    </body>
+</html>

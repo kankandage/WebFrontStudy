@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>this指向</title>
+        <meta charset="utf-8"/>
+        <style>
+            .checked{
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <div class="option">
+                <a class='checked'>男</a>
+                <a>女</a>
+                <a>保密</a>
+            </div>
+        </div>
+        <script>
+            //
+            var btns = document.querySelectorAll('.option a');
+            for(var i=0;i<btns.length;i++){
+                btns[i].onclick = function(){
+                    for(var j=0;j<btns.length;j++){
+                        btns[j].className = '';
+                    }
+                    //1.this 函数下 调用这个函数的元素/对象
+                    this.className = "checked";
+                }
+            }
+            
+            //2.直接调用，环境在window下
+            function adc(){
+                console.log(this);
+            }
+        </script>
+    </body>
+</html>

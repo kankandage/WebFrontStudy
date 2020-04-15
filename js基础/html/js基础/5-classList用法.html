@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>this指向</title>
+        <meta charset="utf-8"/>
+        <style>
+            div{width: 200px;height: 200px;background-color: red;}
+            .show{border: 20px solid  yellow;}
+            .now{height: 400px;}
+        </style>
+    </head>
+    <body>
+        <div class="show active" >
+            
+        </div>
+        <script>
+            //
+            var div = document.querySelector('div');
+            div.onclick = function(){
+                //添加属性
+                this.classList.add('now');
+            }
+        </script>
+    </body>
+</html>
