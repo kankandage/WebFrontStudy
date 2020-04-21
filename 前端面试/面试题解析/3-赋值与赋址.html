@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>面试题JS</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+
+        <script>
+            // Array.clone  Array是引用类型
+
+            //基本类型 clone 拷贝原址
+            //引用类型 拷贝地址
+
+            //1.方法 concat()
+            var arr1 = [10,20,30];
+            var arr2 = arr.concat();
+
+
+            //2.对象拷贝
+            var book = {
+                name:"123",
+                picture:{
+                    small:'../111',
+                    middle:'../222',
+                    large:'../333',
+                }
+            }
+
+
+            var obj = {}
+            for(var v in book){
+                obj[v] = book[v];
+            }
+
+            book.name = '123';
+            book.picture.small = '../1111'
+
+            //object.assgin(target,...source)
+            //可以融合多个
+            //target:目标对象
+            //...sourece:源对象
+            //也是浅拷贝
+            var book1 = Object.assign({},book);
+
+            //深拷贝
+            var obj2 = JSON.parse(JSON.stringify(book));
+
+            //JSON.stringify 转成字符串   不包含undefine function
+
+            //3.递归拷贝
+
+            //
+            function copy(obj){
+                var vv = obj instanceof Array ? []:{};
+                for(var v in obj){
+                    if(typeof obj[v] == 'object'){
+                        copy(obj[v]);
+                    }else{
+                        vv[v] = obj[v];
+                    }
+                }
+
+                return vv;
+            }
+
+            var obj4 = copy(book);
+
+            //typeof instanceof
+            // instanceof 检测constructor.prototype是否存在 在object的原型链上 对于未知的类型 无法判断 
+
+            //最好的方法
+            //Object.prototype.toString.call(obj(obj).slice(8,-1))
+
+            function clone(obj){
+                var vv = null;
+                if(typeof obj == 'object'&& obj !== null){
+                    vv = obj instanceof Array ? []:{};
+                    for(var v in obj){
+                        vv[v] = clone(obj[v]);
+                    }
+                }else{
+                    vv = obj; 
+                }
+                return vv;
+            }
+        </script>
+    </body>
+</html>
