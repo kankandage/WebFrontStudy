@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>面试题JS</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+            <ul id = 'list'></ul>
+        <script>
+            let datas = [
+            {
+                    name:'1章',
+                    children:[
+                        {   
+                            name:'1.1',
+                        }
+                    ]
+                },
+                {
+                    name:'2章',
+                    children:[
+                        {   
+                            name:'2.1',
+                            children:[
+                                {   
+                                    name:'2.1.1',
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name:'3章',
+                    children:[
+                        {   
+                            name:'3.1',
+                        }
+                    ]
+                },
+            ]
+            //递归 自己调用自己
+            //循环处理条件
+            let ulElement = document.querySelector('#list');
+            ulElement.innerHTML = createHTML(datas);
+
+
+            function createHTML(items){
+                return items.map(item =>{
+                    let str =  `
+                        <li>${item.name}</li>              
+                    `;
+                    //判断 是否为数组
+                    if(Array.isArray(item.children)){
+                        str += createHTML(item.children);
+                    }
+
+                    return str;
+
+                }).join('')
+            }
+
+        </script>
+    </body>
+</html>

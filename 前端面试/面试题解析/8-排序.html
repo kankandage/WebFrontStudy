@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>面试题JS</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+            <ul id = 'list'></ul>
+        <script>
+            //排序 sort
+            //冒泡 
+            let arr1  = [2,3,5,4,3,9,8,7,3,1,4,6];
+
+            for(let j=0;j<arr1.length-1;j++){
+                for(let i=0;i<arr1.length-1-j;i++){
+                    let a = arr1[i];
+                    let b = arr1[i+1];
+
+                    if(a>b){
+                        arr1[i] = b;
+                        arr1[i+1] = a;
+                    }
+                }
+            }      
+            console.log(arr1);
+            //快排
+
+            //去重
+            let arr2  = [2,3,5,4,3,9,8,7,3,1,4,6];
+
+            //set
+            let s1 = new Set(arr1);
+            console.log(s1);
+            let s2 = [...s1];
+
+            //对象去重 对象key不重复
+            let obj = {}  //key
+            arr2.forEach(item=>{
+                obj[item] = 1;
+            });
+
+            //根据key 取出value
+            console.log(Object.keys(arr2).map(o=>Number(o)));
+
+            //对象遍历
+            //for in for的方式 object中的Written 属性为true 的才会遍历
+            // //对象属性描述符 Object.defineProperty(obj,'y',{
+
+            // });
+
+            //for of  
+        </script>
+    </body>
+</html>

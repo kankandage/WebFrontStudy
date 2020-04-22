@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>面试题JS</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+            <ul id = 'list'></ul>
+        <script>
+            let datas = [
+                {
+                    name:'1章',
+                    children:{
+                        name:'1.1',
+                    }
+                },
+                {
+                    name:'2章',
+                    children:{
+                        name:'2.1',
+                    }
+                },
+                {
+                    name:'3章',
+                    children:{
+                        name:'3.1',
+                    }
+                }
+            ]
+            //数据操作
+
+             let ulElement = document.querySelector('#list');
+
+            // let html = '';
+            // datas.forEach(datas =>{
+            //      html += `<li>${datas.name}</li>`;
+            // });
+
+            // ulElement.innerHTML = html;
+
+            // 用map返回一个值，省去中间变量html
+            ulElement.innerHTML = datas.map(data =>{
+                return `
+                    <li>${datas.name}</li>              
+                `
+            }).join('')
+
+        </script>
+    </body>
+</html>

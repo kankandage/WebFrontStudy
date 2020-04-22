@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>面试题JS</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+            <ul id = 'list'></ul>
+        <script>
+            //数据扁平化 对于多层数据更好查找
+            // let arr = [1,2,['a','b','c'],3];
+            // //arr.flat(arg); arg扁平化的维度   Infinity
+            // //flat
+            // console.log(arr.flat());
+
+            let datas = [
+                {
+                    id:1,
+                    name:'1章',
+                    checked:true,
+                    children:[
+                        {   
+                            id:2,
+                            name:'1.1',
+                            checked:false,
+                            children:[
+                                {   
+                                    id:2,
+                                    name:'1.1',
+                                    checked:false,
+                                }
+                            ]
+                        }
+                    ]
+                },
+            ]
+
+            let ulElement = document.querySelector('#list');
+            ulElement.innerHTML = createHTML(datas);
+
+            // 数据过滤
+            let newItem = flat(datas);
+
+            console.log(newItem.filter(
+                item=>item.checked
+            ));
+
+            //
+            function flat(items){
+                let newArr = [];
+                items.forEach(item =>{
+                    newArr.push(item);
+                    if(Array.isArray(item.children)){
+                        newArr = newArr.concat(flat(item.children));
+                    }
+                })
+            }
+            //
+            function createHTML(items,level=0){
+                return items.map(item =>{
+                    //
+                    let str =  `
+                        <li style="padding-left:${level*30}px">
+                        <input type='checkbox' ${item.checked?'checked':''}/>
+                        ${item.name}</li>              
+                    `;
+                    //判断 是否为数组
+                    if(Array.isArray(item.children)){
+                        str += createHTML(item.children,level+1);
+                    }
+
+                    return str;
+
+                }).join('')
+            }
+
+
+            //reduce 累加 与flat相同
+            function flat1(items){
+                items.reduce((pre,current)=>{
+                    return pre.concat(
+                        current,
+                        Array.isArray(current.children)?flat(current.children):[]
+                        );
+                },[]);
+            }
+        </script>
+    </body>
+</html>
