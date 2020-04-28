@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>event</title>
+        <meta charset="utf-8"/>
+        <style>
+            #box{
+                position: absolute;
+                left: 0;
+                top: 0px;
+                width:100px;
+                height: 100px;
+                background: red;
+            }
+        </style>
+    </head>
+    <body>
+            <div id='box'></div>
+        <script>
+            //面向对象思想
+            //ES6
+            /*
+                拖拽：
+                1.鼠标按下开始拖拽
+                2.记录位置
+                3
+            */
+            class Drag {
+                //构造函数
+                constructor(el){
+                    this.el = el;
+                    this.startOffset = {};
+                    this.startPoint = {};
+
+                    //
+                    let move = (e)=>{
+                        this.move(e);
+                    };
+
+                    let end = (e)=>{
+                        //document???
+                        document.removeEventListener("mousemove",move);
+                        document.removeEventListener("mouseup",end);
+                    };
+                    
+                    var _this = this;
+                    el.addEventListener("mousedown",(e)=>{
+                        //箭头函数指向当前环境
+                        this.start(e);
+                        document.addEventListener("mousemove",move);
+                        document.addEventListener("mouseup",end);
+                    });
+
+                   
+                }
+                //按下时的处理函数
+                start(e){
+                    //结构赋值 相当于 let el = this.el;
+                    let {el} = this;
+                    this.startOffset = {
+                        x:el.offsetLeft,
+                        y:el.offsetTop 
+                    };
+
+                    this.startPoint = {
+                       x:e.clientX,
+                       y:e.clientY 
+                    };
+                }
+
+                //
+                move(e){
+                    let {el,startOffset,startPoint} = this;
+                    let nowPoint = {
+                        x:e.clientX,
+                        y:e.clientY 
+                    };
+                    let dis = {
+                        x:nowPoint.x - startPoint.x,
+                        y:nowPoint.y - startPoint.y
+                    };
+
+                    el.style.left = dis.x + startOffset.x + "px";
+                    el.style.top = dis.y + startOffset.y + "px";
+                }
+            }
+
+            (function(){
+                let box =  document.querySelector('#box');
+                let dragBox = new Drag(box);
+            })();
+        </script>
+    </body>
+</html>
