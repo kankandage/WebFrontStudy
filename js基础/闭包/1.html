@@ -1,0 +1,45 @@
+<!--
+ * @Description: 
+ * @Author: kankandage
+ * @Date: 2020-05-14 22:17:32
+ * @LastEditTime: 2020-05-14 22:27:37
+ * @LastEditors: kankan
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function count() {
+    var arr = [];
+    for (var i=1; i<=3; i++) {
+        arr.push(function () {
+            return i * i;
+        });
+    }
+    return arr;
+    }
+
+    var results = count();
+    var f1 = results[0];
+    var f2 = results[1];
+    var f3 = results[2];
+    //
+
+    for (var i = 1; i <= 5; i++) {
+        setTimeout(
+        function (n){
+            return function () {
+                console.log(n);
+            }
+        }(i)
+        
+        , i * 1000);
+    }
+    </script>
+</body>
+</html>

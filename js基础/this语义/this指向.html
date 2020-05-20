@@ -1,0 +1,39 @@
+<!--
+ * @Description: 
+ * @Author: kankandage
+ * @Date: 2020-05-14 21:41:06
+ * @LastEditTime: 2020-05-14 21:55:53
+ * @LastEditors: kankan
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <script>
+            //demo1
+            var name = "windowsName";
+
+            var a = {
+                name : "Cherry",
+
+                func1: function () {
+                    console.log(this.name)     
+                },
+
+                func2: function () {
+                    setTimeout(  function () {
+                        this.func1()
+                    },100);
+                }
+            };
+
+            a.func2()     // this.func1 is not a function
+            //因为最后调用 setTimeout 的对象是 window，但是在 window 中并没有 func1 函数。
+ 
+    </script>
+ </body>
+ </html>

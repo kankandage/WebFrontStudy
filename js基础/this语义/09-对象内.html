@@ -1,3 +1,10 @@
+<!--
+ * @Description: 
+ * @Author: kankandage
+ * @Date: 2020-05-12 18:07:57
+ * @LastEditTime: 2020-05-13 16:15:10
+ * @LastEditors: kankan
+ -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,52 +27,52 @@
                     }
                 }
             }
-
             obj.fn1();//2
-            obj.fn.bind({a:"111"})();//111
+            obj.fn2();
+           // obj.fn.bind({a:"111"})();//111
 
-            //-----------------------------------------------------
-            var  obj = {
-                a:1
-            };
+            // //-----------------------------------------------------
+            // var  obj = {
+            //     a:1
+            // };
 
-            var fn = function(){
-                console.log(this.a);
-            }
+            // var fn = function(){
+            //     console.log(this.a);
+            // }
 
-            obj.fn = fn 
-            obj.fn();//1
+            // obj.fn = fn 
+            // obj.fn();//1
 
-            //---------------------------------------------
+            // //---------------------------------------------
 
-            var  obj = {
-                a:1
-            };
+            // var  obj = {
+            //     a:1
+            // };
 
-            var fn1 = ()=>{
-                console.log(this.a);
-            }
+            // var fn1 = ()=>{
+            //     console.log(this.a);
+            // }
 
-            obj.fn1 = fn1;
-            obj.fn1();//undefined
+            // obj.fn1 = fn1;
+            // obj.fn1();//undefined
 
-            //-----------------------------
+            // //-----------------------------
             
-            var a = 1;
-            var  obj = {
-                a:2,
-                o:{
-                    a:3,
-                    fn:function(){
-                        console.log(this.a);
-                    }
-                }
-            };
-            obj.o.fn();//3
+            // var a = 1;
+            // var  obj = {
+            //     a:2,
+            //     o:{
+            //         a:3,
+            //         fn:function(){
+            //             console.log(this.a);
+            //         }
+            //     }
+            // };
+            // obj.o.fn();//3
 
-            var temp = obj.o.fn;
-            //在windows里调用的
-            temp();//1
+            // var temp = obj.o.fn;
+            // //在windows里调用的
+            // temp();//1
 
         </script>
     </body>

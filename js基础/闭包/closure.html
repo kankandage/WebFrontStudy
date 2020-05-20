@@ -1,0 +1,93 @@
+<!--
+ * @Description: 
+ * @Author: kankandage
+ * @Date: 2020-05-14 09:33:28
+ * @LastEditTime: 2020-05-14 21:25:54
+ * @LastEditors: kankan
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //demo1
+        var fn  = null;
+        function foo(){
+            var a = 2;
+            function innerFoo() {
+                console.log(a);
+              }
+              fn = innerFoo;
+        }
+        function bar() {
+            fn();//保留innerFoo的引用
+        }
+
+        foo();
+        bar();//2
+
+        //闭包就是能够读取其他函数内部变量的函数。
+        //一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。
+
+    function f1(){
+        var n = 999;
+        nAdd = function () {
+            n +=1;
+        }
+
+        function f2() {
+            console.log(n);
+        }
+
+        return f2;
+    }
+
+    var result = f1();//999
+    result();
+    nAdd();
+    result();//1000
+
+    //demo3
+    (function (document) {
+    var viewport;
+    var obj = {
+                init: function(id) {
+                    viewport = document.querySelector('#'+ id);
+                },
+                addChild: function(child) {
+                    viewport.appendChild(child);
+                },
+                removeChild: function(child) {
+                    viewport.removeChild(child);
+                }
+            }
+        window.jView = obj;
+    })(document);
+
+    //柯里化 接受多个参数的函数变换成接受一个单一参数（或部分）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。
+    function curry (fn, length) { //fn 表示要转换的函数, length 表示参数长度
+        var len = length || fn.length
+  
+        function fun (...args) {
+            return len <= args.length ? fn.apply(null, args) : fun.bind(null, ...args)
+        }
+            // 比较 定义的参数长度 与 传入的参数长度, 如果等于定义的长度，则执行 fn 方法，而如果不足则使用 bind 让参数合并, 返回新函数(Function.prototype.bind 方法其实也是柯里化应用) 
+        return fun
+    }
+
+    // 计算总和
+    function sum (...args) {
+        return args.reduce((prev, next) => prev += next ,0)
+    }
+
+    var add = curry(sum, 5)
+    add(1, 2)(3, 4)(5) // 15
+
+        
+</script>
+</body>
+</html>
